@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ggaammee</title>
+</head>
+<body>
+<canvas id="screen"></canvas>
+<script>
+    let $screen = document.getElementById('screen');
+    $screen.width = Math.floor(innerWidth-100);
+    $screen.height = Math.floor(innerHeight-100);
+    let REGION_HEIGHT = 64;
+    let REGION_WIDTH = 127;
+    let WUNIT = Math.round($screen.width/REGION_WIDTH)*3;
+    let HUNIT = Math.round($screen.height/REGION_HEIGHT)*3;
+    let ctx = $screen.getContext('2d');
+    let joinedmessage = true;
+    let name = '';
+    let players = {};
+    let drawfullmap = (map, selected) => {
+      let textmap = map;
+      let selected_block = selected;
+      let hero = {};
+      for (p in players) {
+        if (p === name && players.hasOwnProperty(p)) {
+          hero = players[p];
+        }
+      }
+      let transposed = [];
+      for (let y = 0; y < REGION_HEIGHT; y++) {
+        transposed.push(textmap.split('<br>')[y].split(''));
+      }
+      let RegionalMap = transposed[0].map((_, colIndex) => transposed.map(row => row[colIndex]));
+      // noinspection SillyAssignmentJS
+      $screen.width = $screen.width;
+      ctx.translate(Math.round(-hero.x*WUNIT+(REGION_WIDTH*WUNIT/6)), Math.round(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/6)));
+      for (let y = 0; y < REGION_HEIGHT; y++) {
+        for (let x = 0; x < REGION_WIDTH; x++) {
+          let block = RegionalMap[x][y];
+          if (block === 'D') {
+            ctx.fillStyle = '#593c06'
+          } else if (block === 'B') {
+            ctx.fillStyle = 'black';
+          } else if (block === ' ') {
+            ctx.fillStyle = '#dbffff'
+          } else if (['S', 'T', 'C'].includes(block)) {
+            ctx.fillStyle = 'darkgrey';
+          } else if (block === 'L') {
+            ctx.fillStyle = '#009414';
+          } else if (block === 'H') {
+            ctx.fillStyle = '#87331e';
+          }
+
+          ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+
+          if (block === 'D' && RegionalMap[x][y-1] && RegionalMap[x][y-1] === ' ') {
+            ctx.fillStyle = '#208e24';
+            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT/3);
+          }
+          if (block === 'H' && RegionalMap[x+1] && RegionalMap[x+1][y] === ' ') {
+            ctx.fillStyle = '#dbffff';
+            ctx.fillRect((x+0.75)*WUNIT, y*HUNIT, WUNIT/4, HUNIT);
+          }
+          if (block === 'H' && RegionalMap[x-1] && RegionalMap[x-1][y] === ' ') {
+            ctx.fillStyle = '#dbffff';
+            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT/4, HUNIT);
+          }
+          if (block === 'T') ctx.fillStyle = '#dcdfd6';
+          if (block === 'C') ctx.fillStyle = '#dfba85';
+          if (block === 'T' || block === 'C') {
+            ctx.fillRect((x+0.6)*WUNIT, (y+0.2)*HUNIT, WUNIT/6, HUNIT/6);
+            ctx.fillRect((x+0.3)*WUNIT, (y+0.7)*HUNIT, WUNIT/8, HUNIT/8);
+          }
+        }
+      }
+      if (RegionalMap[selected_block[0]][(REGION_HEIGHT - selected_block[1] - 1)] !== ' ') {
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 0.5;
+        ctx.strokeRect(selected_block[0] * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
+      }
+      for (let i = 0; i < Object.values(players).length; i++) {
+        ctx.fillStyle = 'red';
+        ctx.fillRect(Object.values(players)[i].x * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
+      }
+    };
+    let socket = new WebSocket('ws://localhost:3001');
+    socket.onopen = () => {socket.send('getworld')};
+    document.body.addEventListener('keydown', e=>{
+      if (e.code === "KeyD") {
+        socket.send('right');
+      }
+      if (e.code === "KeyA") {
+        socket.send('left');
+      }
+    });
+    socket.onmessage = function (event) {
+      let msg = JSON.parse(event.data);
+      if (msg.type === 'confirm') {
+        drawfullmap(msg.map, msg.selected);
+      }
+      if (msg.type === 'pingjoined') {
+        if (joinedmessage) {
+          joinedmessage = false;
+          name = msg.name;
+        }
+        console.log(msg.name+' joined.');
+      }
+      if (msg.type === 'pingpos') {
+        players = msg.players;
+      }
+    }
+</script>
+</body>
+</html>
