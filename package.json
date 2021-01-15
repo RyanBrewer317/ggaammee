@@ -1,7 +1,9 @@
 {
   "main": "scripts/script.js",
   "scripts": {
-    "start": "node scripts/script.js"
+    "start": "node scripts/script.js",
+    "build": "npm i -dev && webpack --mode production",
+    "heroku-postbuild": "npm build"
   },
   "dependencies": {
     "express": "^4.17.1",
