@@ -2,5 +2,8 @@
   "main": "scripts/script.js",
   "scripts": {
     "start": "node scripts/script.js"
+  },
+  "dependencies": {
+    "ws": "^7.4.2"
   }
 }
