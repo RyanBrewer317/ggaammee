@@ -1,3 +1,6 @@
 {
-  "main": "scripts/script.js"
+  "main": "scripts/script.js",
+  "scripts": {
+    "start": "node scripts/script.js"
+  }
 }
