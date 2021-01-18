@@ -7,6 +7,8 @@
 <body>
 <canvas id="screen"></canvas>
 <script>
+    var HOST = location.origin.replace(/^http/, 'ws');
+    var socket = new WebSocket(HOST);
     let $screen = document.getElementById('screen');
     $screen.width = Math.floor(innerWidth-100);
     $screen.height = Math.floor(innerHeight-100);
@@ -85,7 +87,6 @@
         ctx.fillRect(Object.values(players)[i].x * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
       }
     };
-    let socket = new WebSocket('wss://aqueous-sea-12811.herokuapp.com:3001');
     socket.onopen = () => {socket.send('getworld');console.log('connection established\nworld requested')};
     document.body.addEventListener('keydown', e=>{
       if (e.code === "KeyD") {

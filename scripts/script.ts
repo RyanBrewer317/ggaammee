@@ -4,7 +4,15 @@ const ws = require('ws');
 const express = require('express');
 
 const app = express();
-const server = new ws.Server({port: 3001});
+
+app.get('/', (req, res)=>{
+  // console.log(res);
+  res.sendFile('index.html', {root: './public'});
+});
+
+app.listen(process.env.PORT || 3000);
+
+const server = new ws.Server({ app });
 
 functions.generateNewRegion();
 
@@ -52,13 +60,6 @@ server.on('connection', function(socket) {
     }
   })
 });
-
-app.get('/', (req, res)=>{
-  // console.log(res);
-  res.sendFile('index.html', {root: './public'});
-});
-
-app.listen(process.env.PORT || 3000);
 
 function resp(hero: setup.Hero, type: string): string {
   hero.pingPos();
