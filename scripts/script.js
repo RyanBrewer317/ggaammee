@@ -52,7 +52,7 @@ server.on('connection', function (socket) {
 });
 app.get('/', function (req, res) {
     // console.log(res);
-    res.sendFile('index.html', { root: './../public' });
+    res.sendFile('index.html', { root: './public' });
 });
 app.listen(process.env.PORT || 3000);
 function resp(hero, type) {
