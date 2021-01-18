@@ -1,7 +1,9 @@
 import * as setup from "./setup";
 import * as functions from "./functions";
-const ws = require('ws');
+const { Server } = require('ws');
 const express = require('express');
+
+const PORT = process.env.PORT || 3000;
 
 const server = express();
 
@@ -10,9 +12,9 @@ server.get('/', (req, res)=>{
   res.sendFile('index.html', {root: './public'});
 });
 
-server.listen(process.env.PORT || 3000);
+server.listen(PORT);
 
-const wss = new ws.Server({ server });
+const wss = new Server({ server });
 
 functions.generateNewRegion();
 

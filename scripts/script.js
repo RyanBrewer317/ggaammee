@@ -2,15 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var setup = require("./setup");
 var functions = require("./functions");
-var ws = require('ws');
+var Server = require('ws').Server;
 var express = require('express');
+var PORT = process.env.PORT || 3000;
 var server = express();
 server.get('/', function (req, res) {
     // console.log(res);
     res.sendFile('index.html', { root: './public' });
 });
-server.listen(process.env.PORT || 3000);
-var wss = new ws.Server({ server });
+server.listen(PORT);
+var wss = new Server({ server: server });
 functions.generateNewRegion();
 wss.on('connection', function (socket) {
     // console.log('hi');
