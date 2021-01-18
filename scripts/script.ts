@@ -11,12 +11,6 @@ const server = express()
 
 const wss = new Server({ server });
 
-setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send(new Date().toTimeString());
-  });
-}, 1000);
-
 functions.generateNewRegion();
 
 wss.on('connection', (socket) => {
@@ -58,6 +52,7 @@ wss.on('connection', (socket) => {
   });
   
   socket.on('close', function () {
+    setup.Heroes.splice(setup.Heroes.indexOf(hero));
     for (let i = 0; i < setup.Heroes.length; i++) {
       setup.Heroes[i].pingClosed(hero);
     }

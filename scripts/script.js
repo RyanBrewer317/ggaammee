@@ -9,11 +9,6 @@ var server = express()
     .use(function (req, res) { return res.sendFile('index.html', { root: __dirname.replace('/scripts', '/public') }); })
     .listen(PORT, function () { return console.log("Listening on " + PORT); });
 var wss = new Server({ server: server });
-setInterval(function () {
-    wss.clients.forEach(function (client) {
-        client.send(new Date().toTimeString());
-    });
-}, 1000);
 functions.generateNewRegion();
 wss.on('connection', function (socket) {
     // console.log('hi');
@@ -53,6 +48,7 @@ wss.on('connection', function (socket) {
         }
     });
     socket.on('close', function () {
+        setup.Heroes.splice(setup.Heroes.indexOf(hero));
         for (var i = 0; i < setup.Heroes.length; i++) {
             setup.Heroes[i].pingClosed(hero);
         }
