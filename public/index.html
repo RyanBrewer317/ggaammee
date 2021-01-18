@@ -84,7 +84,7 @@
         ctx.fillRect(Object.values(players)[i].x * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
       }
     };
-    let socket = new WebSocket('ws://https://aqueous-sea-12811.herokuapp.com:3001');
+    let socket = new WebSocket('wss://https://aqueous-sea-12811.herokuapp.com:3001');
     socket.onopen = () => {socket.send('getworld')};
     document.body.addEventListener('keydown', e=>{
       if (e.code === "KeyD") {
