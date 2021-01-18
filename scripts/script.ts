@@ -12,7 +12,7 @@ server.get('/', (req, res)=>{
 
 server.listen(process.env.PORT || 3000);
 
-const wss = new ws.Server({ app: server });
+const wss = new ws.Server({ server });
 
 functions.generateNewRegion();
 

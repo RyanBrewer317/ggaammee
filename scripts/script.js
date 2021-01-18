@@ -10,7 +10,7 @@ server.get('/', function (req, res) {
     res.sendFile('index.html', { root: './public' });
 });
 server.listen(process.env.PORT || 3000);
-var wss = new ws.Server({ app: server });
+var wss = new ws.Server({ server });
 functions.generateNewRegion();
 wss.on('connection', function (socket) {
     // console.log('hi');
