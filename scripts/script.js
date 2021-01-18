@@ -6,7 +6,7 @@ var Server = require('ws').Server;
 var express = require('express');
 var PORT = process.env.PORT || 3000;
 var server = express()
-    .use(function (req, res) { return res.sendFile('index.html', { root: __dirname }); })
+    .use(function (req, res) { return res.sendFile('../public/index.html', { root: __dirname }); })
     .listen(PORT, function () { return console.log("Listening on " + PORT); });
 var wss = new Server({ server: server });
 setInterval(function () {
