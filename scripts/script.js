@@ -54,7 +54,7 @@ app.get('/', function (req, res) {
     // console.log(res);
     res.sendFile('index.html', { root: './../public' });
 });
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 function resp(hero, type) {
     hero.pingPos();
     return JSON.stringify({ 'type': type, 'selected': [setup.SelectedBlock.index.x, setup.SelectedBlock.index.y], 'map': functions.logSelectedRegion() });

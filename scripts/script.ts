@@ -58,7 +58,7 @@ app.get('/', (req, res)=>{
   res.sendFile('index.html', {root: './../public'});
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 function resp(hero: setup.Hero, type: string): string {
   hero.pingPos();
