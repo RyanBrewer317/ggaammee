@@ -21,11 +21,11 @@ var Block = /** @class */ (function () {
         this.material = material;
         this.selected = false;
     }
-    Block.prototype.select = function () {
-        if (exports.SelectedBlock)
-            exports.SelectedBlock.selected = false;
+    Block.prototype.select = function (hero) {
+        if (hero.selectedblock)
+            hero.selectedblock.selected = false;
         this.selected = true;
-        exports.SelectedBlock = this;
+        hero.selectedblock = this;
     };
     return Block;
 }());
@@ -179,7 +179,7 @@ var Hero = /** @class */ (function () {
             if (exports.RegionalMap[x][y].material !== Material.Dirt && exports.RegionalMap[x][y].material !== Material.Bedrock) {
                 this.x = x;
                 this.y = y;
-                exports.RegionalMap[x][y].select();
+                exports.RegionalMap[x][y].select(this);
                 return;
             }
         }
@@ -191,7 +191,7 @@ var Hero = /** @class */ (function () {
         if (this.x < 0)
             this.x = 0;
         // noinspection JSSuspiciousNameCombination
-        exports.RegionalMap[Math.floor(this.x)][Math.floor(this.y)].select();
+        exports.RegionalMap[Math.floor(this.x)][Math.floor(this.y)].select(this);
         this.pingPos();
     };
     Hero.prototype.pingClosed = function (hero) {
