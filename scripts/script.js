@@ -5,13 +5,15 @@ var functions = require("./functions");
 var Server = require('ws').Server;
 var express = require('express');
 var PORT = process.env.PORT || 3000;
-var server = express();
-server.get('/', function (req, res) {
-    // console.log(res);
-    res.sendFile('index.html', { root: './public' });
-});
-server.listen(PORT);
+var server = express()
+    .use(function (req, res) { return res.sendFile('index.html', { root: __dirname }); })
+    .listen(PORT, function () { return console.log("Listening on " + PORT); });
 var wss = new Server({ server: server });
+setInterval(function () {
+    wss.clients.forEach(function (client) {
+        client.send(new Date().toTimeString());
+    });
+}, 1000);
 functions.generateNewRegion();
 wss.on('connection', function (socket) {
     // console.log('hi');
