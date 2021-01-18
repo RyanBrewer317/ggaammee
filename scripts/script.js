@@ -4,15 +4,15 @@ var setup = require("./setup");
 var functions = require("./functions");
 var ws = require('ws');
 var express = require('express');
-var app = express();
-app.get('/', function (req, res) {
+var server = express();
+server.get('/', function (req, res) {
     // console.log(res);
     res.sendFile('index.html', { root: './public' });
 });
-app.listen(process.env.PORT || 3000);
-var server = new ws.Server({ app: app });
+server.listen(process.env.PORT || 3000);
+var wss = new ws.Server({ app: server });
 functions.generateNewRegion();
-server.on('connection', function (socket) {
+wss.on('connection', function (socket) {
     // console.log('hi');
     var hero = new setup.Hero(socket, '' + Math.random());
     setup.Heroes.push(hero);
