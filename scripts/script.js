@@ -5,7 +5,12 @@ var functions = require("./functions");
 var ws = require('ws');
 var express = require('express');
 var app = express();
-var server = new ws.Server({ port: 3001 });
+app.get('/', function (req, res) {
+    // console.log(res);
+    res.sendFile('index.html', { root: './public' });
+});
+app.listen(process.env.PORT || 3000);
+var server = new ws.Server({ app: app });
 functions.generateNewRegion();
 server.on('connection', function (socket) {
     // console.log('hi');
@@ -50,11 +55,6 @@ server.on('connection', function (socket) {
         }
     });
 });
-app.get('/', function (req, res) {
-    // console.log(res);
-    res.sendFile('index.html', { root: './public' });
-});
-app.listen(process.env.PORT || 3000);
 function resp(hero, type) {
     hero.pingPos();
     return JSON.stringify({ 'type': type, 'selected': [setup.SelectedBlock.index.x, setup.SelectedBlock.index.y], 'map': functions.logSelectedRegion() });
