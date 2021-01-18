@@ -19,6 +19,36 @@ export class Block {
     this.selected = true;
     hero.selectedblock = this;
   }
+
+  use(hero: Hero) {
+    if (this.material === Material.CopperOre) {
+      setTimeout(()=>{
+        if (hero.pickup(Carryable.Copper)) this.material = Material.Stone;
+      }, 1000)
+    }
+    if (this.material === Material.Stone) {
+      setTimeout(()=>{
+        hero.pickup(Carryable.Stone)
+      }, 1000)
+    }
+    if (this.material === Material.TinOre) {
+      setTimeout(()=>{
+        if (hero.pickup(Carryable.Tin)) this.material = Material.Stone;
+      }, 1000)
+    }
+    if (this.material === Material.CherryLog) {
+      setTimeout(()=>{
+        hero.pickup(Carryable.CherryLog)
+      }, 1000)
+    }
+  }
+}
+
+export enum Carryable {
+  Copper,
+  Tin,
+  Stone,
+  CherryLog
 }
 
 export class BlockIndex {
@@ -146,6 +176,7 @@ export class Hero {
   socket: ws.WebSocket;
   name: string;
   selectedblock: Block;
+  hotbar: Carryable[] = [null, null, null, null, null, null, null, null, null, null];
 
   constructor(socket: ws.WebSocket, name: string) {
     this.region = SelectedRegion;
@@ -186,6 +217,16 @@ export class Hero {
 
   pingJoined(hero) {
     this.socket.send('{"type": "pingjoined", "name": "'+hero.name+'"}');
+  }
+
+  pickup(carryable: Carryable): boolean {
+    for (let i = 0; i < 10; i++) {
+      if (this.hotbar[i] === null) {
+        this.hotbar[i] = carryable;
+        return true;
+      }
+    }
+    return false;
   }
 }
 

@@ -27,9 +27,41 @@ var Block = /** @class */ (function () {
         this.selected = true;
         hero.selectedblock = this;
     };
+    Block.prototype.use = function (hero) {
+        var _this = this;
+        if (this.material === Material.CopperOre) {
+            setTimeout(function () {
+                if (hero.pickup(Carryable.Copper))
+                    _this.material = Material.Stone;
+            }, 1000);
+        }
+        if (this.material === Material.Stone) {
+            setTimeout(function () {
+                hero.pickup(Carryable.Stone);
+            }, 1000);
+        }
+        if (this.material === Material.TinOre) {
+            setTimeout(function () {
+                if (hero.pickup(Carryable.Tin))
+                    _this.material = Material.Stone;
+            }, 1000);
+        }
+        if (this.material === Material.CherryLog) {
+            setTimeout(function () {
+                hero.pickup(Carryable.CherryLog);
+            }, 1000);
+        }
+    };
     return Block;
 }());
 exports.Block = Block;
+var Carryable;
+(function (Carryable) {
+    Carryable[Carryable["Copper"] = 0] = "Copper";
+    Carryable[Carryable["Tin"] = 1] = "Tin";
+    Carryable[Carryable["Stone"] = 2] = "Stone";
+    Carryable[Carryable["CherryLog"] = 3] = "CherryLog";
+})(Carryable = exports.Carryable || (exports.Carryable = {}));
 var BlockIndex = /** @class */ (function () {
     function BlockIndex(x, y, region) {
         this.x = x;
@@ -171,6 +203,7 @@ var CherryTree = /** @class */ (function (_super) {
 exports.CherryTree = CherryTree;
 var Hero = /** @class */ (function () {
     function Hero(socket, name) {
+        this.hotbar = [null, null, null, null, null, null, null, null, null, null];
         this.region = exports.SelectedRegion;
         this.socket = socket;
         this.name = name;
@@ -207,6 +240,15 @@ var Hero = /** @class */ (function () {
     };
     Hero.prototype.pingJoined = function (hero) {
         this.socket.send('{"type": "pingjoined", "name": "' + hero.name + '"}');
+    };
+    Hero.prototype.pickup = function (carryable) {
+        for (var i = 0; i < 10; i++) {
+            if (this.hotbar[i] === null) {
+                this.hotbar[i] = carryable;
+                return true;
+            }
+        }
+        return false;
     };
     return Hero;
 }());
