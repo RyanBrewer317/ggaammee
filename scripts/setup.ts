@@ -14,14 +14,12 @@ export class Block {
     this.selected = false;
   }
 
-  select() {
-    if (SelectedBlock) SelectedBlock.selected = false;
+  select(hero: Hero) {
+    if (hero.selectedblock) hero.selectedblock.selected = false;
     this.selected = true;
-    SelectedBlock = this;
+    hero.selectedblock = this;
   }
 }
-
-export var SelectedBlock: Block;
 
 export class BlockIndex {
   x: number;
@@ -147,6 +145,7 @@ export class Hero {
   region: Region;
   socket: ws.WebSocket;
   name: string;
+  selectedblock: Block;
 
   constructor(socket: ws.WebSocket, name: string) {
     this.region = SelectedRegion;
@@ -157,7 +156,7 @@ export class Hero {
       if (RegionalMap[x][y].material !== Material.Dirt && RegionalMap[x][y].material !== Material.Bedrock) {
         this.x = x;
         this.y = y;
-        RegionalMap[x][y].select();
+        RegionalMap[x][y].select(this);
         return
       }
     }
@@ -168,7 +167,7 @@ export class Hero {
     if (this.x > REGION_WIDTH - 1.5) this.x = REGION_WIDTH - 1.5;
     if (this.x < 0) this.x = 0;
     // noinspection JSSuspiciousNameCombination
-    RegionalMap[Math.floor(this.x)][Math.floor(this.y)].select();
+    RegionalMap[Math.floor(this.x)][Math.floor(this.y)].select(this);
     this.pingPos();
   }
 
