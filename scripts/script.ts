@@ -5,20 +5,21 @@ const express = require('express');
 
 const PORT = process.env.PORT || 3000;
 
-const server = express();
-
-server.get('/', (req, res)=>{
-  // console.log(res);
-  res.sendFile('index.html', {root: './public'});
-});
-
-server.listen(PORT);
+const server = express()
+  .use((req, res) => res.sendFile('index.html', { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 const wss = new Server({ server });
 
+setInterval(() => {
+  wss.clients.forEach((client) => {
+    client.send(new Date().toTimeString());
+  });
+}, 1000);
+
 functions.generateNewRegion();
 
-wss.on('connection', function(socket) {
+wss.on('connection', (socket) => {
   // console.log('hi');
   let hero = new setup.Hero(socket, ''+Math.random());
   setup.Heroes.push(hero);
