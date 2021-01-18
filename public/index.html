@@ -19,6 +19,7 @@
     let name = '';
     let players = {};
     let drawfullmap = (map, selected) => {
+      console.log('drawing map');
       let textmap = map;
       let selected_block = selected;
       let hero = {};
@@ -85,7 +86,7 @@
       }
     };
     let socket = new WebSocket('wss://aqueous-sea-12811.herokuapp.com:3001');
-    socket.onopen = () => {socket.send('getworld')};
+    socket.onopen = () => {socket.send('getworld');console.log('connection established\nworld requested')};
     document.body.addEventListener('keydown', e=>{
       if (e.code === "KeyD") {
         socket.send('right');
@@ -95,6 +96,7 @@
       }
     });
     socket.onmessage = function (event) {
+      console.log('message received');
       let msg = JSON.parse(event.data);
       if (msg.type === 'confirm') {
         drawfullmap(msg.map, msg.selected);
