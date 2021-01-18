@@ -3,20 +3,20 @@ import * as functions from "./functions";
 const ws = require('ws');
 const express = require('express');
 
-const app = express();
+const server = express();
 
-app.get('/', (req, res)=>{
+server.get('/', (req, res)=>{
   // console.log(res);
   res.sendFile('index.html', {root: './public'});
 });
 
-app.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3000);
 
-const server = new ws.Server({ app });
+const wss = new ws.Server({ app: server });
 
 functions.generateNewRegion();
 
-server.on('connection', function(socket) {
+wss.on('connection', function(socket) {
   // console.log('hi');
   let hero = new setup.Hero(socket, ''+Math.random());
   setup.Heroes.push(hero);
