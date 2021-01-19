@@ -5,19 +5,33 @@
     <title>ggaammee</title>
 </head>
 <body>
-<canvas id="screen"></canvas>
+<table>
+    <tr>
+        <td>
+            <canvas id="screen" style="display: inline; margin-right: 0; padding-right: 0;"></canvas>
+        </td>
+        <td>
+            <canvas id="hotbar" style="margin-left: 0; padding-left: 0; display: inline;"></canvas>
+        </td>
+    </tr>
+</table>
+
 <script>
     const HOST = location.origin.replace(/^http/, 'ws');
     const Carryable = ['copper', 'tin', 'stone', 'cherrylog'];
     let hotbar = ['', '', '', '', '', '', '', '', '', ''];
     let $screen = document.getElementById('screen');
+    let $hotbar = document.getElementById('hotbar');
     $screen.width = Math.floor(innerWidth-100);
     $screen.height = Math.floor(innerHeight-100);
+    $hotbar.height = $screen.height;
+    $hotbar.width = 50;
     let REGION_HEIGHT = 64;
     let REGION_WIDTH = 127;
     let WUNIT = Math.round($screen.width/REGION_WIDTH)*3;
     let HUNIT = Math.round($screen.height/REGION_HEIGHT)*3;
     let ctx = $screen.getContext('2d');
+    let ctx2 = $hotbar.getContext('2d');
     let joinedmessage = true;
     let name = '';
     let players = {};
@@ -89,7 +103,6 @@
       }
       ctx.fillStyle = '#b8c8d2';
       ctx.fillRect($screen.width-30, 60, 30, $screen.height-120);
-      console.log(hotbar, newhotbar);
       hotbar = newhotbar;
       for (let i = 0; i < 10; i++) {
         if (Carryable[hotbar[i]] === 'copper') {
@@ -106,8 +119,7 @@
         } else {
           ctx.fillStyle = '#b8c8d2';
         }
-        console.log(ctx.fillStyle);
-        ctx.fillRect($screen.width-27.5, 62.5+(i*27.5), 25, 25);
+        ctx2.fillRect(5, 5+(i*45), 40, 40);
       }
     };
     function start() {
