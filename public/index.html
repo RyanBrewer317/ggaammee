@@ -101,23 +101,23 @@
         ctx.fillStyle = 'red';
         ctx.fillRect(Object.values(players)[i].x * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
       }
-      ctx.fillStyle = '#b8c8d2';
-      ctx.fillRect($screen.width-30, 60, 30, $screen.height-120);
+      ctx2.fillStyle = '#b8c8d2';
+      ctx2.fillRect(0, 0, $hotbar.width, $hotbar.height);
       hotbar = newhotbar;
       for (let i = 0; i < 10; i++) {
         if (Carryable[hotbar[i]] === 'copper') {
-          ctx.fillStyle = '#dfba85';
+          ctx2.fillStyle = '#dfba85';
         } else
         if (Carryable[hotbar[i]] === 'tin') {
-          ctx.fillStyle = '#dcdfd6';
+          ctx2.fillStyle = '#dcdfd6';
         } else
         if (Carryable[hotbar[i]] === 'stone') {
-          ctx.fillStyle = 'darkgrey';
+          ctx2.fillStyle = 'darkgrey';
         } else
         if (Carryable[hotbar[i]] === 'cherrylog') {
-          ctx.fillStyle = '#87331e';
+          ctx2.fillStyle = '#87331e';
         } else {
-          ctx.fillStyle = '#b8c8d2';
+          ctx2.fillStyle = '#b8c8d2';
         }
         ctx2.fillRect(5, 5+(i*45), 40, 40);
       }
