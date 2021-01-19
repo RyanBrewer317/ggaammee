@@ -24,22 +24,22 @@ export class Block {
     if (this.material === Material.CopperOre) {
       setTimeout(()=>{
         if (hero.pickup(Carryable.Copper)) this.material = Material.Stone;
-      }, 1000)
+      }, 1)
     }
     if (this.material === Material.Stone) {
       setTimeout(()=>{
         hero.pickup(Carryable.Stone)
-      }, 1000)
+      }, 1)
     }
     if (this.material === Material.TinOre) {
       setTimeout(()=>{
         if (hero.pickup(Carryable.Tin)) this.material = Material.Stone;
-      }, 1000)
+      }, 1)
     }
     if (this.material === Material.CherryLog) {
       setTimeout(()=>{
         hero.pickup(Carryable.CherryLog)
-      }, 1000)
+      }, 1)
     }
   }
 }

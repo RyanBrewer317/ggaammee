@@ -33,23 +33,23 @@ var Block = /** @class */ (function () {
             setTimeout(function () {
                 if (hero.pickup(Carryable.Copper))
                     _this.material = Material.Stone;
-            }, 1000);
+            }, 1);
         }
         if (this.material === Material.Stone) {
             setTimeout(function () {
                 hero.pickup(Carryable.Stone);
-            }, 1000);
+            }, 1);
         }
         if (this.material === Material.TinOre) {
             setTimeout(function () {
                 if (hero.pickup(Carryable.Tin))
                     _this.material = Material.Stone;
-            }, 1000);
+            }, 1);
         }
         if (this.material === Material.CherryLog) {
             setTimeout(function () {
                 hero.pickup(Carryable.CherryLog);
-            }, 1000);
+            }, 1);
         }
     };
     return Block;
