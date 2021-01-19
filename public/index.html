@@ -95,11 +95,11 @@
       if (RegionalMap[selected_block[0]][(REGION_HEIGHT - selected_block[1] - 1)] !== ' ') {
         ctx.strokeStyle = 'black';
         ctx.lineWidth = 0.5;
-        ctx.strokeRect(selected_block[0] * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
+        ctx.strokeRect((selected_block[0]-1) * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
       }
       for (let i = 0; i < Object.values(players).length; i++) {
         ctx.fillStyle = 'red';
-        ctx.fillRect(Object.values(players)[i].x * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
+        ctx.fillRect((Object.values(players)[i].x-1) * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
       }
     };
     function drawhotbar(newhotbar) {
