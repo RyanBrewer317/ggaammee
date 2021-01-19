@@ -89,6 +89,7 @@
       }
       ctx.fillStyle = '#b8c8d2';
       ctx.fillRect($screen.width-30, 60, 30, $screen.height-120);
+      console.log(hotbar, newhotbar);
       hotbar = newhotbar;
       for (let i = 0; i < 10; i++) {
         if (Carryable[hotbar[i]] === 'copper') {
@@ -105,6 +106,7 @@
         } else {
           ctx.fillStyle = '#b8c8d2';
         }
+        console.log(ctx.fillStyle);
         ctx.fillRect($screen.width-27.5, 62.5+(i*27.5), 25, 25);
       }
     };
