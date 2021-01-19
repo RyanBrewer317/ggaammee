@@ -92,7 +92,7 @@
           }
         }
       }
-      if (RegionalMap[selected_block[0]+1] && RegionalMap[selected_block[0]+1][(REGION_HEIGHT - selected_block[1] - 1)] !== ' ') {
+      if (RegionalMap[selected_block[0]][(REGION_HEIGHT - selected_block[1] - 1)] !== ' ') {
         ctx.strokeStyle = 'black';
         ctx.lineWidth = 0.5;
         ctx.strokeRect(selected_block[0] * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
