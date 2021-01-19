@@ -224,7 +224,7 @@ var Hero = /** @class */ (function () {
         if (this.x < 0)
             this.x = 0;
         // noinspection JSSuspiciousNameCombination
-        exports.RegionalMap[Math.floor(this.x)][Math.floor(this.y)].select(this);
+        exports.RegionalMap[Math.ceil(this.x)][Math.ceil(this.y)].select(this);
         this.pingPos();
     };
     Hero.prototype.pingClosed = function (hero) {
