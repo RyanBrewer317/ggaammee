@@ -44,6 +44,7 @@ wss.on('connection', (socket) => {
     if (msg === 'getworld') {}
     if (msg === 'use') {
       hero.selectedblock.use(hero);
+      setTimeout(()=>socket.send(resp(hero, type)), 1.001)
     }
     if (emit) {
       for (let i = 0; i < setup.Heroes.length; i++) {

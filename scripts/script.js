@@ -40,6 +40,7 @@ wss.on('connection', function (socket) {
         if (msg === 'getworld') { }
         if (msg === 'use') {
             hero.selectedblock.use(hero);
+            setTimeout(function () { return socket.send(resp(hero, type)); }, 1.001);
         }
         if (emit) {
             for (var i = 0; i < setup.Heroes.length; i++) {
