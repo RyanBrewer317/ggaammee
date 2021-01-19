@@ -198,7 +198,7 @@ export class Hero {
     if (this.x > REGION_WIDTH - 1.5) this.x = REGION_WIDTH - 1.5;
     if (this.x < 0) this.x = 0;
     // noinspection JSSuspiciousNameCombination
-    RegionalMap[Math.ceil(this.x)][Math.ceil(this.y)].select(this);
+    RegionalMap[this.x-Math.floor(this.x)<0.75? Math.floor(this.x) : Math.ceil(this.x)][this.y-Math.floor(this.y)<0.75? Math.floor(this.y) : Math.ceil(this.y)].select(this);
     this.pingPos();
   }
 
