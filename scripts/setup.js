@@ -219,10 +219,10 @@ var Hero = /** @class */ (function () {
     }
     Hero.prototype.moveX = function (amt) {
         this.x += amt;
-        if (this.x > exports.REGION_WIDTH - 1.5)
-            this.x = exports.REGION_WIDTH - 1.5;
-        if (this.x < 0)
-            this.x = 0;
+        if (this.x > exports.REGION_WIDTH - 0.5)
+            this.x = exports.REGION_WIDTH - 0.5;
+        if (this.x < 0.5)
+            this.x = 0.5;
         // noinspection JSSuspiciousNameCombination
         exports.RegionalMap[this.x - Math.floor(this.x) < 0.75 ? Math.floor(this.x) : Math.ceil(this.x)][this.y - Math.floor(this.y) < 0.75 ? Math.floor(this.y) : Math.ceil(this.y)].select(this);
         this.pingPos();
