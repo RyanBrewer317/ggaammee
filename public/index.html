@@ -125,7 +125,7 @@
     function start() {
       let socket = new WebSocket(HOST);
       socket.onopen = () => {socket.send('getworld')};
-      socket.onclose = setTimeout(start, 5);
+      socket.onclose = () => setTimeout(start, 5);
       document.body.addEventListener('keydown', e=>{
           if (e.code === "KeyD") {
             socket.send('right');
