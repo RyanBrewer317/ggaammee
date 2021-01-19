@@ -59,5 +59,5 @@ wss.on('connection', function (socket) {
 });
 function resp(hero, type) {
     hero.pingPos();
-    return JSON.stringify({ 'type': type, 'selected': [hero.selectedblock.index.x, hero.selectedblock.index.y], 'map': functions.logSelectedRegion() });
+    return JSON.stringify({ 'type': type, 'selected': [hero.selectedblock.index.x, hero.selectedblock.index.y], 'map': functions.logSelectedRegion(), 'hotbar': hero.hotbar });
 }

@@ -8,7 +8,8 @@
 <canvas id="screen"></canvas>
 <script>
     const HOST = location.origin.replace(/^http/, 'ws');
-
+    const Carryable = ['copper', 'tin', 'stone', 'cherrylog'];
+    let hotbar = ['', '', '', '', '', '', '', '', '', ''];
     let $screen = document.getElementById('screen');
     $screen.width = Math.floor(innerWidth-100);
     $screen.height = Math.floor(innerHeight-100);
@@ -20,7 +21,7 @@
     let joinedmessage = true;
     let name = '';
     let players = {};
-    let drawfullmap = (map, selected) => {
+    let drawfullmap = (map, selected, newhotbar) => {
       console.log('drawing map');
       let textmap = map;
       let selected_block = selected;
@@ -86,6 +87,26 @@
         ctx.fillStyle = 'red';
         ctx.fillRect(Object.values(players)[i].x * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
       }
+      ctx.fillStyle = '#b8c8d2';
+      ctx.fillRect($screen.width-30, 60, 30, $screen.height-120);
+      hotbar = newhotbar;
+      for (let i = 0; i < 10; i++) {
+        if (Carryable[hotbar[i]] === 'copper') {
+          ctx.fillStyle = '#dfba85';
+        } else
+        if (Carryable[hotbar[i]] === 'tin') {
+          ctx.fillStyle = '#dcdfd6';
+        } else
+        if (Carryable[hotbar[i]] === 'stone') {
+          ctx.fillStyle = 'darkgrey';
+        } else
+        if (Carryable[hotbar[i]] === 'cherrylog') {
+          ctx.fillStyle = '#87331e';
+        } else {
+          ctx.fillStyle = '#b8c8d2';
+        }
+        ctx.fillRect($screen.width-27.5, 62.5+(i*27.5), 25, 25);
+      }
     };
     function start() {
       let socket = new WebSocket(HOST);
@@ -105,7 +126,7 @@
       socket.onmessage = function (event) {
         let msg = JSON.parse(event.data);
         if (msg.type === 'confirm') {
-          drawfullmap(msg.map, msg.selected);
+          drawfullmap(msg.map, msg.selected, msg.hotbar);
         }
         if (msg.type === 'pingjoined') {
           if (joinedmessage) {
@@ -119,6 +140,7 @@
         }
       }
     }
+    start();
 </script>
 </body>
 </html>

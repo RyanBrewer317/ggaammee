@@ -64,5 +64,5 @@ wss.on('connection', (socket) => {
 
 function resp(hero: setup.Hero, type: string): string {
   hero.pingPos();
-  return JSON.stringify({'type': type, 'selected': [hero.selectedblock.index.x, hero.selectedblock.index.y], 'map': functions.logSelectedRegion()});
+  return JSON.stringify({'type': type, 'selected': [hero.selectedblock.index.x, hero.selectedblock.index.y], 'map': functions.logSelectedRegion(), 'hotbar': hero.hotbar});
 }
