@@ -196,7 +196,7 @@ export class Hero {
   moveX(amt: number) {
     this.x += amt;
     if (this.x > REGION_WIDTH - 0.5) this.x = REGION_WIDTH - 0.5;
-    if (this.x < 0.5) this.x = 0.5;
+    if (this.x < 1) this.x = 1;
     // noinspection JSSuspiciousNameCombination
     RegionalMap[this.x-Math.floor(this.x)<0.75? Math.floor(this.x) : Math.ceil(this.x)][this.y-Math.floor(this.y)<0.75? Math.floor(this.y) : Math.ceil(this.y)].select(this);
     this.pingPos();
