@@ -14,7 +14,7 @@ const wss = new Server({ server });
 functions.generateNewRegion();
 
 wss.on('connection', (socket, req) => {
-  let hero = new setup.Hero(socket, req.connection.remoteAddress);
+  let hero = new setup.Hero(socket, req.headers.host);
   let existing = false;
   for (let i = 0; i < setup.Heroes.length; i++) {
     if (setup.Heroes[i].name === hero.name) {hero = setup.Heroes[i]; existing = true; console.log('dupe found', hero.name); break}
