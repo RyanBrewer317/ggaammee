@@ -10,10 +10,20 @@ var server = express()
     .listen(PORT, function () { return console.log("Listening on " + PORT); });
 var wss = new Server({ server: server });
 functions.generateNewRegion();
-wss.on('connection', function (socket) {
-    // console.log('hi');
-    var hero = new setup.Hero(socket, '' + Math.random());
-    setup.Heroes.push(hero);
+wss.on('connection', function (socket, req) {
+    var hero = new setup.Hero(socket, req.connection.remoteAddress);
+    var existing = false;
+    for (var i = 0; i < setup.Heroes.length; i++) {
+        if (setup.Heroes[i].name === hero.name) {
+            hero = setup.Heroes[i];
+            existing = true;
+            break;
+        }
+    }
+    if (!existing)
+        setup.Heroes.push(hero);
+    else
+        hero.socket = socket;
     console.log(hero.name + ' joined.');
     for (var i = 0; i < setup.Heroes.length; i++) {
         setup.Heroes[i].pingJoined(hero);
@@ -52,10 +62,7 @@ wss.on('connection', function (socket) {
         }
     });
     socket.on('close', function () {
-        setup.Heroes.splice(setup.Heroes.indexOf(hero));
-        for (var i = 0; i < setup.Heroes.length; i++) {
-            setup.Heroes[i].pingClosed(hero);
-        }
+        hero.disconnect();
     });
 });
 function resp(hero, type) {

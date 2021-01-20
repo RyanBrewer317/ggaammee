@@ -177,6 +177,7 @@ export class Hero {
   name: string;
   selectedblock: Block;
   hotbar: Carryable[] = [null, null, null, null, null, null, null, null, null, null];
+  online: boolean = true;
 
   constructor(socket: ws.WebSocket, name: string) {
     this.region = SelectedRegion;
@@ -209,7 +210,7 @@ export class Hero {
   pingPos() {
     let playerpos = '{';
     for (let i = 0; i < Heroes.length; i++) {
-      playerpos += '"' + Heroes[i].name + '": {"x": ' + Heroes[i].x + ', "y": ' + Heroes[i].y + ', "region": "'+Heroes[i].region.id+'"},';
+      if (Heroes[i].online) playerpos += '"' + Heroes[i].name + '": {"x": ' + Heroes[i].x + ', "y": ' + Heroes[i].y + ', "region": "'+Heroes[i].region.id+'"},';
     }
     playerpos = playerpos.substring(0, playerpos.length-1)+'}';
     this.socket.send('{"type": "pingpos", "players": '+playerpos+'}')
@@ -227,6 +228,20 @@ export class Hero {
       }
     }
     return false;
+  }
+
+  disconnect() {
+    this.online = false;
+    for (let i = 0; i < Heroes.length; i++) {
+      Heroes[i].pingClosed(this);
+    }
+  }
+
+  reconnect() {
+    this.online = true;
+    for (let i = 0; i < Heroes.length; i++) {
+      Heroes[i].pingJoined(this);
+    }
   }
 }
 

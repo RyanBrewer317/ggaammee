@@ -204,6 +204,7 @@ exports.CherryTree = CherryTree;
 var Hero = /** @class */ (function () {
     function Hero(socket, name) {
         this.hotbar = [null, null, null, null, null, null, null, null, null, null];
+        this.online = true;
         this.region = exports.SelectedRegion;
         this.socket = socket;
         this.name = name;
@@ -221,8 +222,8 @@ var Hero = /** @class */ (function () {
         this.x += amt;
         if (this.x > exports.REGION_WIDTH - 0.5)
             this.x = exports.REGION_WIDTH - 0.5;
-        if (this.x < 0.5)
-            this.x = 0.5;
+        if (this.x < 1)
+            this.x = 1;
         // noinspection JSSuspiciousNameCombination
         exports.RegionalMap[this.x - Math.floor(this.x) < 0.75 ? Math.floor(this.x) : Math.ceil(this.x)][this.y - Math.floor(this.y) < 0.75 ? Math.floor(this.y) : Math.ceil(this.y)].select(this);
         this.pingPos();
@@ -233,7 +234,8 @@ var Hero = /** @class */ (function () {
     Hero.prototype.pingPos = function () {
         var playerpos = '{';
         for (var i = 0; i < exports.Heroes.length; i++) {
-            playerpos += '"' + exports.Heroes[i].name + '": {"x": ' + exports.Heroes[i].x + ', "y": ' + exports.Heroes[i].y + ', "region": "' + exports.Heroes[i].region.id + '"},';
+            if (exports.Heroes[i].online)
+                playerpos += '"' + exports.Heroes[i].name + '": {"x": ' + exports.Heroes[i].x + ', "y": ' + exports.Heroes[i].y + ', "region": "' + exports.Heroes[i].region.id + '"},';
         }
         playerpos = playerpos.substring(0, playerpos.length - 1) + '}';
         this.socket.send('{"type": "pingpos", "players": ' + playerpos + '}');
@@ -249,6 +251,18 @@ var Hero = /** @class */ (function () {
             }
         }
         return false;
+    };
+    Hero.prototype.disconnect = function () {
+        this.online = false;
+        for (var i = 0; i < exports.Heroes.length; i++) {
+            exports.Heroes[i].pingClosed(this);
+        }
+    };
+    Hero.prototype.reconnect = function () {
+        this.online = true;
+        for (var i = 0; i < exports.Heroes.length; i++) {
+            exports.Heroes[i].pingJoined(this);
+        }
     };
     return Hero;
 }());

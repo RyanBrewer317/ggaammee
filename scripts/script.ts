@@ -13,10 +13,14 @@ const wss = new Server({ server });
 
 functions.generateNewRegion();
 
-wss.on('connection', (socket) => {
-  // console.log('hi');
-  let hero = new setup.Hero(socket, ''+Math.random());
-  setup.Heroes.push(hero);
+wss.on('connection', (socket, req) => {
+  let hero = new setup.Hero(socket, req.connection.remoteAddress);
+  let existing = false;
+  for (let i = 0; i < setup.Heroes.length; i++) {
+    if (setup.Heroes[i].name === hero.name) {hero = setup.Heroes[i]; existing = true; break}
+  }
+  if (!existing) setup.Heroes.push(hero);
+  else hero.socket = socket;
   console.log(hero.name+' joined.');
   for (let i = 0; i < setup.Heroes.length; i++) {
     setup.Heroes[i].pingJoined(hero);
@@ -56,10 +60,7 @@ wss.on('connection', (socket) => {
   });
   
   socket.on('close', function () {
-    setup.Heroes.splice(setup.Heroes.indexOf(hero));
-    for (let i = 0; i < setup.Heroes.length; i++) {
-      setup.Heroes[i].pingClosed(hero);
-    }
+    hero.disconnect()
   })
 });
 
