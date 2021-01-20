@@ -17,9 +17,9 @@ wss.on('connection', (socket, req) => {
   let hero = new setup.Hero(socket, req.connection.remoteAddress);
   let existing = false;
   for (let i = 0; i < setup.Heroes.length; i++) {
-    if (setup.Heroes[i].name === hero.name) {hero = setup.Heroes[i]; existing = true; break}
+    if (setup.Heroes[i].name === hero.name) {hero = setup.Heroes[i]; existing = true; console.log('dupe found', hero.name); break}
   }
-  if (!existing) setup.Heroes.push(hero);
+  if (!existing) {setup.Heroes.push(hero); console.log('not existing', setup.Heroes.length)}
   else hero.socket = socket;
   console.log(hero.name+' joined.');
   for (let i = 0; i < setup.Heroes.length; i++) {

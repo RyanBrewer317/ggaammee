@@ -17,11 +17,14 @@ wss.on('connection', function (socket, req) {
         if (setup.Heroes[i].name === hero.name) {
             hero = setup.Heroes[i];
             existing = true;
+            console.log('dupe found', hero.name);
             break;
         }
     }
-    if (!existing)
+    if (!existing) {
         setup.Heroes.push(hero);
+        console.log('not existing', setup.Heroes.length);
+    }
     else
         hero.socket = socket;
     console.log(hero.name + ' joined.');
