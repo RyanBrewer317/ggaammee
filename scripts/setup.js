@@ -61,6 +61,72 @@ var Carryable;
     Carryable[Carryable["Tin"] = 1] = "Tin";
     Carryable[Carryable["Stone"] = 2] = "Stone";
     Carryable[Carryable["CherryLog"] = 3] = "CherryLog";
+    Carryable[Carryable["StoneTool"] = 4] = "StoneTool";
+    Carryable[Carryable["BronzeCherryAxe"] = 5] = "BronzeCherryAxe";
+    Carryable[Carryable["BronzeCherryPickAxe"] = 6] = "BronzeCherryPickAxe";
+    Carryable[Carryable["BuzzBronzeCherryAxe"] = 7] = "BuzzBronzeCherryAxe";
+    Carryable[Carryable["BuzzBronzeCherryPickAxe"] = 8] = "BuzzBronzeCherryPickAxe";
+    Carryable[Carryable["DarkBronzeCherryAxe"] = 9] = "DarkBronzeCherryAxe";
+    Carryable[Carryable["DarkBronzeCherryPickAxe"] = 10] = "DarkBronzeCherryPickAxe";
+    Carryable[Carryable["Moss"] = 11] = "Moss";
+    Carryable[Carryable["FlytrapSeed"] = 12] = "FlytrapSeed";
+    Carryable[Carryable["Cherry"] = 13] = "Cherry";
+    Carryable[Carryable["CypressLog"] = 14] = "CypressLog";
+    Carryable[Carryable["CypressCone"] = 15] = "CypressCone";
+    Carryable[Carryable["RedwoodCone"] = 16] = "RedwoodCone";
+    Carryable[Carryable["RedwoodLog"] = 17] = "RedwoodLog";
+    Carryable[Carryable["Bronze"] = 18] = "Bronze";
+    Carryable[Carryable["BuzzBronze"] = 19] = "BuzzBronze";
+    Carryable[Carryable["DarkBronze"] = 20] = "DarkBronze";
+    Carryable[Carryable["Slime"] = 21] = "Slime";
+    Carryable[Carryable["Glass"] = 22] = "Glass";
+    Carryable[Carryable["SlimeGlass"] = 23] = "SlimeGlass";
+    Carryable[Carryable["Clay"] = 24] = "Clay";
+    Carryable[Carryable["BronzeCypressAxe"] = 25] = "BronzeCypressAxe";
+    Carryable[Carryable["BronzeCypressPickAxe"] = 26] = "BronzeCypressPickAxe";
+    Carryable[Carryable["BuzzBronzeCypressAxe"] = 27] = "BuzzBronzeCypressAxe";
+    Carryable[Carryable["BuzzBronzeCypressPickaxe"] = 28] = "BuzzBronzeCypressPickaxe";
+    Carryable[Carryable["DarkBronzeCypressAxe"] = 29] = "DarkBronzeCypressAxe";
+    Carryable[Carryable["DarkBronzeCypressPickAxe"] = 30] = "DarkBronzeCypressPickAxe";
+    Carryable[Carryable["BronzeRedwoodAxe"] = 31] = "BronzeRedwoodAxe";
+    Carryable[Carryable["BronzeRedwoodPickAxe"] = 32] = "BronzeRedwoodPickAxe";
+    Carryable[Carryable["BuzzBronzeRedwoodAxe"] = 33] = "BuzzBronzeRedwoodAxe";
+    Carryable[Carryable["BuzzBronzeRedwoodPickAxe"] = 34] = "BuzzBronzeRedwoodPickAxe";
+    Carryable[Carryable["DarkBronzeRedwoodAxe"] = 35] = "DarkBronzeRedwoodAxe";
+    Carryable[Carryable["DarkBronzeRedwoodPickaxe"] = 36] = "DarkBronzeRedwoodPickaxe";
+    Carryable[Carryable["BronzeArmor"] = 37] = "BronzeArmor";
+    Carryable[Carryable["BuzzBronzeArmor"] = 38] = "BuzzBronzeArmor";
+    Carryable[Carryable["DarkBronzeArmor"] = 39] = "DarkBronzeArmor";
+    Carryable[Carryable["Necrum"] = 40] = "Necrum";
+    Carryable[Carryable["Zipium"] = 41] = "Zipium";
+    Carryable[Carryable["SlimyBronzeCherryAxe"] = 42] = "SlimyBronzeCherryAxe";
+    Carryable[Carryable["SlimyBuzzBronzeCherryAxe"] = 43] = "SlimyBuzzBronzeCherryAxe";
+    Carryable[Carryable["SlimyDarkBronzeCherryAxe"] = 44] = "SlimyDarkBronzeCherryAxe";
+    Carryable[Carryable["SlimyBronzeCypressAxe"] = 45] = "SlimyBronzeCypressAxe";
+    Carryable[Carryable["SlimyBuzzBronzeCypressAxe"] = 46] = "SlimyBuzzBronzeCypressAxe";
+    Carryable[Carryable["SlimyDarkBronzeCypressAxe"] = 47] = "SlimyDarkBronzeCypressAxe";
+    Carryable[Carryable["SlimyBronzeRedwoodAxe"] = 48] = "SlimyBronzeRedwoodAxe";
+    Carryable[Carryable["SlimyBuzzBronzeRedwoodAxe"] = 49] = "SlimyBuzzBronzeRedwoodAxe";
+    Carryable[Carryable["SlimyDarkBronzeRedwoodAxe"] = 50] = "SlimyDarkBronzeRedwoodAxe";
+    Carryable[Carryable["SlimyBronzeArmor"] = 51] = "SlimyBronzeArmor";
+    Carryable[Carryable["SlimyBuzzBronzeArmor"] = 52] = "SlimyBuzzBronzeArmor";
+    Carryable[Carryable["SlimyDarkBronzeArmor"] = 53] = "SlimyDarkBronzeArmor";
+    Carryable[Carryable["GlassedBronzeArmor"] = 54] = "GlassedBronzeArmor";
+    Carryable[Carryable["GlassedBuzzBronzeArmor"] = 55] = "GlassedBuzzBronzeArmor";
+    Carryable[Carryable["GlassedDarkBronzeArmor"] = 56] = "GlassedDarkBronzeArmor";
+    Carryable[Carryable["SlimeGlassBronzeArmor"] = 57] = "SlimeGlassBronzeArmor";
+    Carryable[Carryable["SlimeGlassBuzzBronzeArmor"] = 58] = "SlimeGlassBuzzBronzeArmor";
+    Carryable[Carryable["SlimeGlassDarkBronzeArmor"] = 59] = "SlimeGlassDarkBronzeArmor";
+    Carryable[Carryable["SiliconBronzeArmor"] = 60] = "SiliconBronzeArmor";
+    Carryable[Carryable["SiliconBuzzBronzeArmor"] = 61] = "SiliconBuzzBronzeArmor";
+    Carryable[Carryable["SiliconDarkBronzeArmor"] = 62] = "SiliconDarkBronzeArmor";
+    Carryable[Carryable["ReinforcedBronzeArmor"] = 63] = "ReinforcedBronzeArmor";
+    Carryable[Carryable["ReinforcedBuzzBronzeArmor"] = 64] = "ReinforcedBuzzBronzeArmor";
+    Carryable[Carryable["ReinforcedDarkBronzeArmor"] = 65] = "ReinforcedDarkBronzeArmor";
+    Carryable[Carryable["Sand"] = 66] = "Sand";
+    Carryable[Carryable["CherryWood"] = 67] = "CherryWood";
+    Carryable[Carryable["Redwood"] = 68] = "Redwood";
+    Carryable[Carryable["Cypress"] = 69] = "Cypress";
 })(Carryable = exports.Carryable || (exports.Carryable = {}));
 var BlockIndex = /** @class */ (function () {
     function BlockIndex(x, y, region) {
@@ -87,12 +153,31 @@ var Material;
     Material[Material["CopperOre"] = 3] = "CopperOre";
     Material[Material["TinOre"] = 4] = "TinOre";
     Material[Material["CherryLog"] = 5] = "CherryLog";
-    Material[Material["Leaf"] = 6] = "Leaf";
+    Material[Material["CherryLeaves"] = 6] = "CherryLeaves";
     Material[Material["Bedrock"] = 7] = "Bedrock";
+    Material[Material["Moss"] = 8] = "Moss";
+    Material[Material["Flytrap"] = 9] = "Flytrap";
+    Material[Material["Water"] = 10] = "Water";
+    Material[Material["PiledStone"] = 11] = "PiledStone";
+    Material[Material["CherryWood"] = 12] = "CherryWood";
+    Material[Material["CypressLog"] = 13] = "CypressLog";
+    Material[Material["Cypress"] = 14] = "Cypress";
+    Material[Material["CypressPines"] = 15] = "CypressPines";
+    Material[Material["RedwoodLog"] = 16] = "RedwoodLog";
+    Material[Material["Redwood"] = 17] = "Redwood";
+    Material[Material["RedwoodPines"] = 18] = "RedwoodPines";
 })(Material = exports.Material || (exports.Material = {}));
 var Biome;
 (function (Biome) {
     Biome[Biome["Prairie"] = 0] = "Prairie";
+    Biome[Biome["PeatBog"] = 1] = "PeatBog";
+    Biome[Biome["Marsh"] = 2] = "Marsh";
+    Biome[Biome["Mountain"] = 3] = "Mountain";
+    Biome[Biome["Desert"] = 4] = "Desert";
+    Biome[Biome["River"] = 5] = "River";
+    Biome[Biome["Beach"] = 6] = "Beach";
+    Biome[Biome["Settlement"] = 7] = "Settlement";
+    Biome[Biome["Harbor"] = 8] = "Harbor";
 })(Biome = exports.Biome || (exports.Biome = {}));
 var Region = /** @class */ (function () {
     function Region(id, biome, map) {
@@ -111,6 +196,9 @@ var PrairieStructure;
     PrairieStructure[PrairieStructure["CherryTree"] = 0] = "CherryTree";
     PrairieStructure[PrairieStructure["Boulder"] = 1] = "Boulder";
 })(PrairieStructure = exports.PrairieStructure || (exports.PrairieStructure = {}));
+var PeatBogStructure;
+(function (PeatBogStructure) {
+})(PeatBogStructure = exports.PeatBogStructure || (exports.PeatBogStructure = {}));
 var Structure = /** @class */ (function () {
     function Structure() {
     }
@@ -189,7 +277,7 @@ var CherryTree = /** @class */ (function (_super) {
                     bx++;
                 if (i === 2 || i === 5)
                     bx++;
-                b = new Block(new BlockIndex(bx, by, exports.SelectedRegion), Material.Leaf);
+                b = new Block(new BlockIndex(bx, by, exports.SelectedRegion), Material.CherryLeaves);
             }
             else
                 b = new Block(new BlockIndex(x + 1, y, exports.SelectedRegion), Material.CherryLog);

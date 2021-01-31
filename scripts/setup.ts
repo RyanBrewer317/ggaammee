@@ -48,7 +48,73 @@ export enum Carryable {
   Copper,
   Tin,
   Stone,
-  CherryLog
+  CherryLog,
+  StoneTool,
+  BronzeCherryAxe,
+  BronzeCherryPickAxe,
+  BuzzBronzeCherryAxe,
+  BuzzBronzeCherryPickAxe,
+  DarkBronzeCherryAxe,
+  DarkBronzeCherryPickAxe,
+  Moss,
+  FlytrapSeed,
+  Cherry,
+  CypressLog,
+  CypressCone,
+  RedwoodCone,
+  RedwoodLog,
+  Bronze,
+  BuzzBronze,
+  DarkBronze,
+  Slime,
+  Glass,
+  SlimeGlass,
+  Clay,
+  BronzeCypressAxe,
+  BronzeCypressPickAxe,
+  BuzzBronzeCypressAxe,
+  BuzzBronzeCypressPickaxe,
+  DarkBronzeCypressAxe,
+  DarkBronzeCypressPickAxe,
+  BronzeRedwoodAxe,
+  BronzeRedwoodPickAxe,
+  BuzzBronzeRedwoodAxe,
+  BuzzBronzeRedwoodPickAxe,
+  DarkBronzeRedwoodAxe,
+  DarkBronzeRedwoodPickaxe,
+  BronzeArmor,
+  BuzzBronzeArmor,
+  DarkBronzeArmor,
+  Necrum,
+  Zipium,
+  SlimyBronzeCherryAxe,
+  SlimyBuzzBronzeCherryAxe,
+  SlimyDarkBronzeCherryAxe,
+  SlimyBronzeCypressAxe,
+  SlimyBuzzBronzeCypressAxe,
+  SlimyDarkBronzeCypressAxe,
+  SlimyBronzeRedwoodAxe,
+  SlimyBuzzBronzeRedwoodAxe,
+  SlimyDarkBronzeRedwoodAxe,
+  SlimyBronzeArmor,
+  SlimyBuzzBronzeArmor,
+  SlimyDarkBronzeArmor,
+  GlassedBronzeArmor,
+  GlassedBuzzBronzeArmor,
+  GlassedDarkBronzeArmor,
+  SlimeGlassBronzeArmor,
+  SlimeGlassBuzzBronzeArmor,
+  SlimeGlassDarkBronzeArmor,
+  SiliconBronzeArmor,
+  SiliconBuzzBronzeArmor,
+  SiliconDarkBronzeArmor,
+  ReinforcedBronzeArmor,
+  ReinforcedBuzzBronzeArmor,
+  ReinforcedDarkBronzeArmor,
+  Sand,
+  CherryWood,
+  Redwood,
+  Cypress
 }
 
 export class BlockIndex {
@@ -79,12 +145,31 @@ export enum Material {
   CopperOre,
   TinOre,
   CherryLog,
-  Leaf,
-  Bedrock
+  CherryLeaves,
+  Bedrock,
+  Moss,
+  Flytrap,
+  Water,
+  PiledStone,
+  CherryWood,
+  CypressLog,
+  Cypress,
+  CypressPines,
+  RedwoodLog,
+  Redwood,
+  RedwoodPines
 }
 
 export enum Biome {
-  Prairie
+  Prairie,
+  PeatBog,
+  Marsh,
+  Mountain,
+  Desert,
+  River,
+  Beach,
+  Settlement,
+  Harbor
 }
 
 export class Region {
@@ -108,6 +193,8 @@ export enum PrairieStructure {
   CherryTree,
   Boulder
 }
+
+export enum PeatBogStructure {}
 
 export class Structure {
   index: BlockIndex;  // bottom left corner
@@ -162,7 +249,7 @@ export class CherryTree extends Structure {
         if (i > 2) by++; else by += 2;
         if ([1, 2, 4, 5].indexOf(i) > -1) bx++;
         if (i === 2 || i === 5) bx++;
-        b = new Block(new BlockIndex(bx, by, SelectedRegion), Material.Leaf);
+        b = new Block(new BlockIndex(bx, by, SelectedRegion), Material.CherryLeaves);
       } else b = new Block(new BlockIndex(x+1, y, SelectedRegion), Material.CherryLog);
       if ([1, 2, 3, 4, 5, 7].indexOf(i) > -1) this.blocks.push(b);
     }
@@ -183,6 +270,7 @@ export class Hero {
     this.region = SelectedRegion;
     this.socket = socket;
     this.name = name;
+    this.hotbar[0] = Carryable.StoneTool;
     let x = Math.floor(REGION_WIDTH/2);
     for (let y = 0; y < REGION_HEIGHT; y++) {
       if (RegionalMap[x][y].material !== Material.Dirt && RegionalMap[x][y].material !== Material.Bedrock) {

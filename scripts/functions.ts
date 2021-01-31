@@ -47,7 +47,7 @@ export function logSelectedRegion(): string {
     let line = '';
     for (let x = 0; x < setup.REGION_WIDTH; x++) {
       let m = setup.RegionalMap[x][y].material;
-      line = line + (m === setup.Material.Dirt ? "D" : (m === setup.Material.Stone ? "S" : (m === setup.Material.Bedrock ? 'B' : (m === setup.Material.Air ? ' ' : (m === setup.Material.CopperOre ? 'C' : (m === setup.Material.TinOre ? 'T' : (m === setup.Material.Leaf ? 'L' : (m === setup.Material.CherryLog ? 'H' : '_'))))))))
+      line = line + (m === setup.Material.Dirt ? "D" : (m === setup.Material.Stone ? "S" : (m === setup.Material.Bedrock ? 'B' : (m === setup.Material.Air ? ' ' : (m === setup.Material.CopperOre ? 'C' : (m === setup.Material.TinOre ? 'T' : (m === setup.Material.CherryLeaves ? 'L' : (m === setup.Material.CherryLog ? 'H' : '_'))))))))
     }
     out = out + '<br>' + line.substring(1);
   }

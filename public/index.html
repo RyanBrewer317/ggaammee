@@ -18,7 +18,7 @@
 
 <script>
     const HOST = location.origin.replace(/^http/, 'ws');
-    const Carryable = ['copper', 'tin', 'stone', 'cherrylog'];
+    const Carryable = ['Copper','Tin','Stone','CherryLog','StoneTool','BronzeCherryAxe','BronzeCherryPickAxe','BuzzBronzeCherryAxe','BuzzBronzeCherryPickAxe','DarkBronzeCherryAxe','DarkBronzeCherryPickAxe','Moss','FlytrapSeed','Cherry','CypressLog','CypressCone','RedwoodCone','RedwoodLog','Bronze','BuzzBronze','DarkBronze','Slime','Glass','SlimeGlass','Clay','BronzeCypressAxe','BronzeCypressPickAxe','BuzzBronzeCypressAxe','BuzzBronzeCypressPickaxe','DarkBronzeCypressAxe','DarkBronzeCypressPickAxe','BronzeRedwoodAxe','BronzeRedwoodPickAxe','BuzzBronzeRedwoodAxe','BuzzBronzeRedwoodPickAxe','DarkBronzeRedwoodAxe','DarkBronzeRedwoodPickaxe','BronzeArmor','BuzzBronzeArmor','DarkBronzeArmor','Necrum','Zipium','SlimyBronzeCherryAxe','SlimyBuzzBronzeCherryAxe','SlimyDarkBronzeCherryAxe','SlimyBronzeCypressAxe','SlimyBuzzBronzeCypressAxe','SlimyDarkBronzeCypressAxe','SlimyBronzeRedwoodAxe','SlimyBuzzBronzeRedwoodAxe','SlimyDarkBronzeRedwoodAxe','SlimyBronzeArmor','SlimyBuzzBronzeArmor','SlimyDarkBronzeArmor','GlassedBronzeArmor','GlassedBuzzBronzeArmor','GlassedDarkBronzeArmor','SlimeGlassBronzeArmor','SlimeGlassBuzzBronzeArmor','SlimeGlassDarkBronzeArmor','SiliconBronzeArmor','SiliconBuzzBronzeArmor','SiliconDarkBronzeArmor','ReinforcedBronzeArmor','ReinforcedBuzzBronzeArmor','ReinforcedDarkBronzeArmor','Sand','CherryWood','Redwood','Cypress'];
     let hotbar = ['', '', '', '', '', '', '', '', '', ''];
     let $screen = document.getElementById('screen');
     let $hotbar = document.getElementById('hotbar');
@@ -107,17 +107,20 @@
       ctx2.fillRect(0, 0, $hotbar.width, $hotbar.height);
       hotbar = newhotbar;
       for (let i = 0; i < 10; i++) {
-        if (Carryable[hotbar[i]] === 'copper') {
+        if (Carryable[hotbar[i]] === 'Copper') {
           ctx2.fillStyle = '#dfba85';
         } else
-        if (Carryable[hotbar[i]] === 'tin') {
+        if (Carryable[hotbar[i]] === 'Tin') {
           ctx2.fillStyle = '#dcdfd6';
         } else
-        if (Carryable[hotbar[i]] === 'stone') {
+        if (Carryable[hotbar[i]] === 'Stone') {
           ctx2.fillStyle = 'darkgrey';
         } else
-        if (Carryable[hotbar[i]] === 'cherrylog') {
+        if (Carryable[hotbar[i]] === 'CherryLog') {
           ctx2.fillStyle = '#87331e';
+        } else
+        if (Carryable[hotbar[i]] === 'StoneTool') {
+            ctx.fillStyle = '#faf';
         } else {
           ctx2.fillStyle = '#b8c8d2';
         }
