@@ -296,12 +296,12 @@ export class Hero {
   }
 
   pingPos() {
-    let playerpos = '{';
+    let playerpos = '';
     for (let i = 0; i < Heroes.length; i++) {
       if (Heroes[i].online) playerpos += '"' + Heroes[i].name + '": {"x": ' + Heroes[i].x + ', "y": ' + Heroes[i].y + ', "region": "'+Heroes[i].region.id+'"},';
     }
-    playerpos = playerpos.substring(0, playerpos.length-1)+'}';
-    this.socket.send('{"type": "pingpos", "players": '+playerpos+'}')
+    playerpos = playerpos.substring(0, playerpos.length-1);
+    this.socket.send('{"type": "pingpos", "players": {'+playerpos+'}}')
   }
 
   pingJoined(hero) {

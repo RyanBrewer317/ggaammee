@@ -19,11 +19,17 @@ wss.on('connection', (socket, req) => {
   for (let i = 0; i < setup.Heroes.length; i++) {
     if (setup.Heroes[i].name === hero.name) {hero = setup.Heroes[i]; existing = true; console.log('dupe found', hero.name); break}
   }
-  if (!existing) {setup.Heroes.push(hero); console.log('not existing', setup.Heroes.length)}
-  else hero.socket = socket;
-  console.log(hero.name+' joined.');
-  for (let i = 0; i < setup.Heroes.length; i++) {
-    setup.Heroes[i].pingJoined(hero);
+  if (!existing) {
+    setup.Heroes.push(hero);
+    console.log('not existing', setup.Heroes.length);
+    console.log(hero.name+' joined.');
+    for (let i = 0; i < setup.Heroes.length; i++) {
+      setup.Heroes[i].pingJoined(hero);
+    }
+  }
+  else {
+    hero.socket = socket;
+    hero.reconnect();
   }
 
   socket.on('message', function(msg) {

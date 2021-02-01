@@ -24,12 +24,14 @@ wss.on('connection', function (socket, req) {
     if (!existing) {
         setup.Heroes.push(hero);
         console.log('not existing', setup.Heroes.length);
+        console.log(hero.name + ' joined.');
+        for (var i = 0; i < setup.Heroes.length; i++) {
+            setup.Heroes[i].pingJoined(hero);
+        }
     }
-    else
+    else {
         hero.socket = socket;
-    console.log(hero.name + ' joined.');
-    for (var i = 0; i < setup.Heroes.length; i++) {
-        setup.Heroes[i].pingJoined(hero);
+        hero.reconnect();
     }
     socket.on('message', function (msg) {
         var type = 'confirm';

@@ -321,13 +321,13 @@ var Hero = /** @class */ (function () {
         this.socket.send('{"type": "pingclosed", "name": "' + hero.name + '"}');
     };
     Hero.prototype.pingPos = function () {
-        var playerpos = '{';
+        var playerpos = '';
         for (var i = 0; i < exports.Heroes.length; i++) {
             if (exports.Heroes[i].online)
                 playerpos += '"' + exports.Heroes[i].name + '": {"x": ' + exports.Heroes[i].x + ', "y": ' + exports.Heroes[i].y + ', "region": "' + exports.Heroes[i].region.id + '"},';
         }
-        playerpos = playerpos.substring(0, playerpos.length - 1) + '}';
-        this.socket.send('{"type": "pingpos", "players": ' + playerpos + '}');
+        playerpos = playerpos.substring(0, playerpos.length - 1);
+        this.socket.send('{"type": "pingpos", "players": {' + playerpos + '}}');
     };
     Hero.prototype.pingJoined = function (hero) {
         this.socket.send('{"type": "pingjoined", "name": "' + hero.name + '"}');
