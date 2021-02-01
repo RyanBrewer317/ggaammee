@@ -102,7 +102,7 @@
                     ctx.drawImage(bigrocksheet, 0, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone above and below but not to either side
-                    ctx.drawImage(bigrocksheet, 240, 0, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    ctx.drawImage(bigrocksheet, 238, 0, 82, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 }
               } else {
@@ -123,7 +123,7 @@
                     ctx.drawImage(bigrocksheet, 0, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone below but not anywhere else
-                    ctx.drawImage(bigrocksheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    ctx.drawImage(smallrocksheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 }
               }
@@ -151,9 +151,9 @@
                 }
               } else {
                 //theres no stone above or below
-                if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
+                if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                   //theres stone to the left and not above or below
-                  if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
+                  if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
                     //----theres stone to either side but not below or above
                   } else {
                     //----theres stone to the left but not anywhere else
@@ -161,7 +161,7 @@
                   }
                 } else {
                   //theres no stone to the left, above, or below
-                  if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
+                  if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
                     //----theres stone to the right and nowhere else
                     ctx.drawImage(smallrocksheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
