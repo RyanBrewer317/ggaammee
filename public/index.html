@@ -153,15 +153,15 @@
                 //theres no stone above or below
                 if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                   //theres stone to the left and not above or below
-                  if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
+                  if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone to either side but not below or above
                   } else {
                     //----theres stone to the left but not anywhere else
-                    ctx.drawImage(bigrocksheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    ctx.drawImage(smallrocksheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 } else {
                   //theres no stone to the left, above, or below
-                  if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
+                  if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone to the right and nowhere else
                     ctx.drawImage(smallrocksheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
