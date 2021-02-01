@@ -288,24 +288,20 @@ var CherryTree = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this.index = new BlockIndex(x, y, exports.SelectedRegion);
         _this.blocks = [];
-        for (var i = 0; i < 9; i++) { // move around in a 3x3 grid pattern, starting top left
+        for (var i = 0; i < 6; i++) { // move around in a 2x3 grid pattern, starting top left
             var b = void 0;
-            if (i < 6) {
+            if (i < 3) {
                 var bx = x;
-                var by = y;
-                if (i > 2)
-                    by++;
-                else
-                    by += 2;
-                if ([1, 2, 4, 5].indexOf(i) > -1)
-                    bx++;
-                if (i === 2 || i === 5)
+                var by = y + 1;
+                if (i === 2)
+                    bx += 2;
+                if (i === 1)
                     bx++;
                 b = new Block(new BlockIndex(bx, by, exports.SelectedRegion), Material.CherryLeaves);
             }
             else
                 b = new Block(new BlockIndex(x + 1, y, exports.SelectedRegion), Material.CherryLog);
-            if ([1, 2, 3, 4, 5, 7].indexOf(i) > -1)
+            if ([0, 1, 2, 4].indexOf(i) > -1)
                 _this.blocks.push(b);
         }
         return _this;

@@ -265,17 +265,16 @@ export class CherryTree extends Structure {
     super();
     this.index = new BlockIndex(x, y, SelectedRegion);
     this.blocks = [];
-    for (let i = 0; i < 9; i++) {  // move around in a 3x3 grid pattern, starting top left
+    for (let i = 0; i < 6; i++) {  // move around in a 2x3 grid pattern, starting top left
       let b: Block;
-      if (i < 6) {
+      if (i < 3) {
         let bx = x;
-        let by = y;
-        if (i > 2) by++; else by += 2;
-        if ([1, 2, 4, 5].indexOf(i) > -1) bx++;
-        if (i === 2 || i === 5) bx++;
+        let by = y+1;
+        if (i === 2) bx += 2;
+        if (i === 1) bx++;
         b = new Block(new BlockIndex(bx, by, SelectedRegion), Material.CherryLeaves);
       } else b = new Block(new BlockIndex(x+1, y, SelectedRegion), Material.CherryLog);
-      if ([1, 2, 3, 4, 5, 7].indexOf(i) > -1) this.blocks.push(b);
+      if ([0, 1, 2, 4].indexOf(i) > -1) this.blocks.push(b);
     }
   }
 }

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10defaac-3505-4856-8193-0c2899c7487d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/setup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/setup.ts" afterDir="false" />
@@ -51,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/functions.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="-241">
               <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
             </state>
           </provider>
@@ -60,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="135" column="2" selection-start-line="135" selection-start-column="2" selection-end-line="135" selection-end-column="2" />
+            <state relative-caret-position="283">
+              <caret line="276" column="60" lean-forward="true" selection-start-line="276" selection-start-column="60" selection-end-line="276" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -69,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="20" column="1635" selection-start-line="20" selection-start-column="1635" selection-end-line="20" selection-end-column="1635" />
+            <state relative-caret-position="275">
+              <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -223,12 +224,12 @@
       <workItem from="1610732853932" duration="34000" />
       <workItem from="1610745224856" duration="27619000" />
       <workItem from="1611691925210" duration="4425000" />
-      <workItem from="1611912197761" duration="11059000" />
+      <workItem from="1611912197761" duration="13810000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88167000" />
+    <option name="totallyTimeSpent" value="90918000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -241,18 +242,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="830" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Favorites" order="0" sideWeight="0.24309392" side_tool="true" visible="true" weight="0.17238913" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7569061" visible="true" weight="0.17238913" />
+      <window_info id="Favorites" order="0" sideWeight="0.24375" side_tool="true" visible="true" weight="0.17238913" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.75625" visible="true" weight="0.17238913" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49928468" visible="true" weight="0.24055944" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49928468" weight="0.24055944" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5007153" side_tool="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49928468" weight="0.32867134" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="TypeScript" order="6" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="TypeScript" order="6" visible="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32961586" />
       <window_info anchor="bottom" id="Run" order="8" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
@@ -336,13 +336,6 @@
         <state relative-caret-position="-4878" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/functions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/smallrockcoppersheet.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -374,10 +367,20 @@
     <entry file="file://$PROJECT_DIR$/public/img/rocksheet.tif">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/cherrysheet.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/functions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="20" column="1635" selection-start-line="20" selection-start-column="1635" selection-end-line="20" selection-end-column="1635" />
+        <state relative-caret-position="275">
+          <caret line="269" column="41" selection-start-line="269" selection-start-column="41" selection-end-line="269" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -389,8 +392,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="135" column="2" selection-start-line="135" selection-start-column="2" selection-end-line="135" selection-end-column="2" />
+        <state relative-caret-position="283">
+          <caret line="276" column="60" lean-forward="true" selection-start-line="276" selection-start-column="60" selection-end-line="276" selection-end-column="60" />
         </state>
       </provider>
     </entry>
