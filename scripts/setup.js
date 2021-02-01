@@ -296,6 +296,7 @@ var Hero = /** @class */ (function () {
         this.region = exports.SelectedRegion;
         this.socket = socket;
         this.name = name;
+        this.hotbar[0] = Carryable.StoneTool;
         var x = Math.floor(exports.REGION_WIDTH / 2);
         for (var y = 0; y < exports.REGION_HEIGHT; y++) {
             if (exports.RegionalMap[x][y].material !== Material.Dirt && exports.RegionalMap[x][y].material !== Material.Bedrock) {

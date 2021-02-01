@@ -143,6 +143,7 @@
           }
       });
       socket.onmessage = function (event) {
+        console.log(event.data)
         let msg = JSON.parse(event.data);
         if (msg.type === 'confirm') {
           drawfullmap(msg.map, msg.selected);
