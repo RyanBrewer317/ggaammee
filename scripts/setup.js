@@ -129,6 +129,26 @@ var Carryable;
     Carryable[Carryable["Cypress"] = 69] = "Cypress";
     Carryable[Carryable["IcePlant"] = 70] = "IcePlant";
     Carryable[Carryable["Fern"] = 71] = "Fern";
+    Carryable[Carryable["Rye"] = 72] = "Rye";
+    Carryable[Carryable["Bread"] = 73] = "Bread";
+    Carryable[Carryable["Venison"] = 74] = "Venison";
+    Carryable[Carryable["Antler"] = 75] = "Antler";
+    Carryable[Carryable["Bone"] = 76] = "Bone";
+    Carryable[Carryable["DeerPelt"] = 77] = "DeerPelt";
+    Carryable[Carryable["RedPaintedCherryWood"] = 78] = "RedPaintedCherryWood";
+    Carryable[Carryable["WhitePaintedCherryWood"] = 79] = "WhitePaintedCherryWood";
+    Carryable[Carryable["BlackPaintedCherryWood"] = 80] = "BlackPaintedCherryWood";
+    Carryable[Carryable["RedPaintedRedwood"] = 81] = "RedPaintedRedwood";
+    Carryable[Carryable["WhitePaintedRedwood"] = 82] = "WhitePaintedRedwood";
+    Carryable[Carryable["BlackPaintedRedWood"] = 83] = "BlackPaintedRedWood";
+    Carryable[Carryable["RedPaintedCypress"] = 84] = "RedPaintedCypress";
+    Carryable[Carryable["WhitePaintedCypress"] = 85] = "WhitePaintedCypress";
+    Carryable[Carryable["BlackPaintedCypress"] = 86] = "BlackPaintedCypress";
+    Carryable[Carryable["Abalone"] = 87] = "Abalone";
+    Carryable[Carryable["Salmon"] = 88] = "Salmon";
+    Carryable[Carryable["CookedSalmon"] = 89] = "CookedSalmon";
+    Carryable[Carryable["CookedVenison"] = 90] = "CookedVenison";
+    Carryable[Carryable["Feather"] = 91] = "Feather";
 })(Carryable = exports.Carryable || (exports.Carryable = {}));
 var BlockIndex = /** @class */ (function () {
     function BlockIndex(x, y, region) {

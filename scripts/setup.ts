@@ -116,7 +116,27 @@ export enum Carryable {
   Redwood,
   Cypress,
   IcePlant,
-  Fern
+  Fern,
+  Rye,
+  Bread,
+  Venison,
+  Antler,
+  Bone,
+  DeerPelt,
+  RedPaintedCherryWood,
+  WhitePaintedCherryWood,
+  BlackPaintedCherryWood,
+  RedPaintedRedwood,
+  WhitePaintedRedwood,
+  BlackPaintedRedWood,
+  RedPaintedCypress,
+  WhitePaintedCypress,
+  BlackPaintedCypress,
+  Abalone,
+  Salmon,
+  CookedSalmon,
+  CookedVenison,
+  Feather
 }
 
 export class BlockIndex {
@@ -165,13 +185,13 @@ export enum Material {
 }
 
 export enum Biome {
-  Prairie,
+  Prairie,  // effectively san jouquin valley chaparral
   PeatBog,
   Marsh,
-  Mountain,
-  Desert,
+  Mountain,  // muir woods
+  Desert,  // think mojave
   River,
-  Beach,
+  Beach,  // this is where the ice plant is
   Settlement,
   Harbor
 }
