@@ -76,10 +76,12 @@
           } else if (block === 'B') {
             ctx.fillStyle = '#000';
             ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
-          } else if (block === ' ' || ['S', 'T', 'C'].includes(block)) {
+          } else if (block === ' ') {
             ctx.fillStyle = '#dbffff';
             ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
           } else if (['S', 'T', 'C'].includes(block)) {
+            ctx.fillStyle = '#dbffff';
+            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
             if (RegionalMap[x][y - 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y - 1])) {
               // theres stone below
               if (RegionalMap[x][y + 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y + 1])) {
@@ -190,12 +192,12 @@
             ctx.fillStyle = '#dbffff';
             ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT/4, HUNIT);
           }
-          if (block === 'T') ctx.fillStyle = '#dcdfd6';
-          if (block === 'C') ctx.fillStyle = '#dfba85';
-          if (block === 'T' || block === 'C') {
-            ctx.fillRect((x+0.6)*WUNIT, (y+0.2)*HUNIT, WUNIT/6, HUNIT/6);
-            ctx.fillRect((x+0.3)*WUNIT, (y+0.7)*HUNIT, WUNIT/8, HUNIT/8);
-          }
+          // if (block === 'T') ctx.fillStyle = '#dcdfd6';
+          // if (block === 'C') ctx.fillStyle = '#dfba85';
+          // if (block === 'T' || block === 'C') {
+          //   ctx.fillRect((x+0.6)*WUNIT, (y+0.2)*HUNIT, WUNIT/6, HUNIT/6);
+          //   ctx.fillRect((x+0.3)*WUNIT, (y+0.7)*HUNIT, WUNIT/8, HUNIT/8);
+          // }
         }
       }
       if (RegionalMap[selected_block[0]-1] && RegionalMap[selected_block[0]-1][(REGION_HEIGHT - selected_block[1] - 1)] !== ' ') {
