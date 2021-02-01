@@ -114,7 +114,9 @@ export enum Carryable {
   Sand,
   CherryWood,
   Redwood,
-  Cypress
+  Cypress,
+  IcePlant,
+  Fern
 }
 
 export class BlockIndex {
@@ -157,7 +159,9 @@ export enum Material {
   CypressPines,
   RedwoodLog,
   Redwood,
-  RedwoodPines
+  RedwoodPines,
+  IcePlant,
+  Fern,
 }
 
 export enum Biome {

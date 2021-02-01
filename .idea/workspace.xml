@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10defaac-3505-4856-8193-0c2899c7487d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/setup.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +34,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/script.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
@@ -55,27 +55,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="303" column="71" lean-forward="true" selection-start-line="303" selection-start-column="71" selection-end-line="303" selection-end-column="71" />
+            <state relative-caret-position="150">
+              <caret line="173" column="8" lean-forward="true" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/setup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4910" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="145" column="30" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
+            <state relative-caret-position="321">
+              <caret line="150" column="9" lean-forward="true" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -102,6 +95,7 @@
       <find>cons</find>
       <find>select</find>
       <find>translate</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,9 +115,9 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/scripts/script.js" />
+        <option value="$PROJECT_DIR$/scripts/script.ts" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/scripts/setup.ts" />
-        <option value="$PROJECT_DIR$/scripts/script.ts" />
       </list>
     </option>
   </component>
@@ -238,12 +232,12 @@
       <workItem from="1610732853932" duration="34000" />
       <workItem from="1610745224856" duration="27619000" />
       <workItem from="1611691925210" duration="4425000" />
-      <workItem from="1611912197761" duration="2517000" />
+      <workItem from="1611912197761" duration="3304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79625000" />
+    <option name="totallyTimeSpent" value="80412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -256,6 +250,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="830" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.24309392" side_tool="true" visible="true" weight="0.17238913" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7569061" visible="true" weight="0.17238913" />
@@ -282,6 +277,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/require.js" />
@@ -347,10 +368,20 @@
     <entry file="file://$PROJECT_DIR$/spritesheets/rocksheet.tif">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="145" column="30" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
+        <state relative-caret-position="321">
+          <caret line="150" column="9" lean-forward="true" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -362,23 +393,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/setup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4910" />
+        <state relative-caret-position="-4878" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="303" column="71" lean-forward="true" selection-start-line="303" selection-start-column="71" selection-end-line="303" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="173" column="8" lean-forward="true" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
         </state>
       </provider>
     </entry>

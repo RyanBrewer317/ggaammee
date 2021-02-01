@@ -127,6 +127,8 @@ var Carryable;
     Carryable[Carryable["CherryWood"] = 67] = "CherryWood";
     Carryable[Carryable["Redwood"] = 68] = "Redwood";
     Carryable[Carryable["Cypress"] = 69] = "Cypress";
+    Carryable[Carryable["IcePlant"] = 70] = "IcePlant";
+    Carryable[Carryable["Fern"] = 71] = "Fern";
 })(Carryable = exports.Carryable || (exports.Carryable = {}));
 var BlockIndex = /** @class */ (function () {
     function BlockIndex(x, y, region) {
@@ -166,6 +168,8 @@ var Material;
     Material[Material["RedwoodLog"] = 16] = "RedwoodLog";
     Material[Material["Redwood"] = 17] = "Redwood";
     Material[Material["RedwoodPines"] = 18] = "RedwoodPines";
+    Material[Material["IcePlant"] = 19] = "IcePlant";
+    Material[Material["Fern"] = 20] = "Fern";
 })(Material = exports.Material || (exports.Material = {}));
 var Biome;
 (function (Biome) {
