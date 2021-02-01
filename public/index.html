@@ -93,18 +93,26 @@
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone on all sides
                     ctx.drawImage(bigrocksheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone to the left, above, and below, but not to the right
                     ctx.drawImage(bigrocksheet, 160, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 160, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 160, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 } else {
                   //theres stone above and below but not to the left
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone above and below and to the right, but not to the left
                     ctx.drawImage(bigrocksheet, 0, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 0, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 0, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone above and below but not to either side
                     ctx.drawImage(bigrocksheet, 238, 0, 82, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 238, 0, 82, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 238, 0, 82, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 }
               } else {
@@ -114,18 +122,26 @@
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone below, to the right, and to the left, but not above
                     ctx.drawImage(bigrocksheet, 80, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 80, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 80, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone below and to the left but not to the right or above
                     ctx.drawImage(bigrocksheet, 158, 80, 78, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 158, 80, 78, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 158, 80, 78, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 } else {
                   //theres stone below but not to the left or above
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone below and to the right but not to the left or above
                     ctx.drawImage(bigrocksheet, 0, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 0, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 0, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone below but not anywhere else
                     ctx.drawImage(smallrocksheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(smallrocktinsheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(smallrockcoppersheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 }
               }
@@ -138,15 +154,21 @@
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone above and to either side but not below
                     ctx.drawImage(bigrocksheet, 80, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 80, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 80, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone above and to the left but not the right or below
                     ctx.drawImage(bigrocksheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 } else {
                   //theres stone above but not to the left or below
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone above and to the right but not to the left or below
                     ctx.drawImage(bigrocksheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone above but not anywhere else
                   }
@@ -158,18 +180,26 @@
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone to either side but not below or above
                     ctx.drawImage(bigrocksheet, 240, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 240, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 240, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone to the left but not anywhere else
                     ctx.drawImage(smallrocksheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(smallrocktinsheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(smallrockcoppersheet, 160, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 } else {
                   //theres no stone to the left, above, or below
                   if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                     //----theres stone to the right and nowhere else
                     ctx.drawImage(smallrocksheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(smallrocktinsheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(smallrockcoppersheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres no stone around
                     ctx.drawImage(bigrocksheet, 240, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'T') ctx.drawImage(bigrocktinsheet, 240, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    if (block === 'C') ctx.drawImage(bigrockcoppersheet, 240, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 }
               }
