@@ -81,7 +81,7 @@
             ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
           } else if (['S', 'T', 'C'].includes(block)) {
             ctx.fillStyle = '#dbffff';
-            // ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
             if (RegionalMap[x][y + 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y + 1])) {
               // theres stone below
               if (RegionalMap[x][y - 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y - 1])) {
