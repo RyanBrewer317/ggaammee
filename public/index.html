@@ -68,7 +68,7 @@
       let RegionalMap = transposed[0].map((_, colIndex) => transposed.map(row => row[colIndex]));
       // noinspection SillyAssignmentJS
       $screen.width = $screen.width;
-      ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/12)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/12)));
+      ctx.translate(Math.floor(-(hero.x-1)*WUNIT/*+(REGION_WIDTH*WUNIT/12)*/), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT/*+(REGION_HEIGHT*HUNIT/12)*/));
       for (let y = 0; y < REGION_HEIGHT; y++) {
         for (let x = 0; x < REGION_WIDTH; x++) {
           let block = RegionalMap[x][y];
