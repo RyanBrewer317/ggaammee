@@ -116,7 +116,7 @@
                     ctx.drawImage(bigrocksheet, 80, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
                     //----theres stone below and to the left but not to the right or above
-                    ctx.drawImage(bigrocksheet, 160, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    ctx.drawImage(bigrocksheet, 158, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 } else {
                   //theres stone below but not to the left or above
@@ -258,7 +258,7 @@
                     }
                   } else {
                     //----theres stone to the left but not anywhere else
-                    ctx.drawImage(cherrysheet, 160, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+                    ctx.drawImage(cherrysheet, 160, 162, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 } else {
                   //theres no stone to the left, above, or below
@@ -266,6 +266,7 @@
                     //----theres stone to the right and nowhere else
                     ctx.drawImage(cherrysheet, 0, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
+                    //----theres no stone around
                     ctx.drawImage(cherrysheet, 240, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   }
                 }
