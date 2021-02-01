@@ -82,9 +82,9 @@
           } else if (['S', 'T', 'C'].includes(block)) {
             ctx.fillStyle = '#dbffff';
             ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
-            if (RegionalMap[x][y - 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y - 1])) {
+            if (RegionalMap[x][y + 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y + 1])) {
               // theres stone below
-              if (RegionalMap[x][y + 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y + 1])) {
+              if (RegionalMap[x][y - 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y - 1])) {
                 //theres stone above and below
                 if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
                   //theres stone to the left, above, and below
@@ -129,7 +129,7 @@
               }
             } else {
               //theres no stone below
-              if (RegionalMap[x][y + 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y + 1])) {
+              if (RegionalMap[x][y - 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y - 1])) {
                 //theres stone above but not below
                 if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
                   //theres stone above and to the left but not below
@@ -151,9 +151,9 @@
                 }
               } else {
                 //theres no stone above or below
-                if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
+                if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
                   //theres stone to the left and not above or below
-                  if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
+                  if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
                     //----theres stone to either side but not below or above
                   } else {
                     //----theres stone to the left but not anywhere else
@@ -161,7 +161,7 @@
                   }
                 } else {
                   //theres no stone to the left, above, or below
-                  if (RegionalMap[x + 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x + 1][y])) {
+                  if (RegionalMap[x - 1][y] && ['S', 'T', 'C'].includes(RegionalMap[x - 1][y])) {
                     //----theres stone to the right and nowhere else
                     ctx.drawImage(bigrocksheet, 0, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
