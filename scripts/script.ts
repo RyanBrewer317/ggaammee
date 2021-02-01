@@ -6,7 +6,7 @@ const express = require('express');
 const PORT = process.env.PORT || 3000;
 
 const server = express()
-  .use((req, res) => res.sendFile('index.html', { root: __dirname.replace('/scripts', '/public') }))
+  .use(express.use('public'))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 const wss = new Server({ server });

@@ -35,6 +35,20 @@
     let joinedmessage = true;
     let name = '';
     let players = {};
+
+    let smallrocksheet = new Image();
+    smallrocksheet.src = 'img/smallrocksheet.png';
+    let bigrocksheet = new Image();
+    bigrocksheet.src = 'img/bigrocksheet.png';
+    let smallrockcoppersheet = new Image();
+    smallrockcoppersheet.src = 'img/smallrockcoppersheet.png';
+    let bigrockcoppersheet = new Image();
+    bigrockcoppersheet.src = 'img/bigrockcoppersheet.png';
+    let smallrocktinsheet = new Image();
+    smallrocktinsheet.src = 'img/smallrocktinsheet.png';
+    let bigrocktinsheet = new Image();
+    bigrocktinsheet.src = 'img/bigrocktinsheet.png';
+
     let drawfullmap = (map, selected) => {
       // console.log('drawing map');
       let textmap = map;
@@ -161,7 +175,7 @@
         }
       }
     }
-    start();
+    bigrocktinsheet.onload = start;
 </script>
 </body>
 </html>
