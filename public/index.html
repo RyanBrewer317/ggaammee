@@ -211,9 +211,9 @@
               // theres stone below
               if (RegionalMap[x][y - 1] && RegionalMap[x][y - 1] === 'L') {
                 //theres stone above and below
-                if (RegionalMap[x - 1][y] && RegionalMap[x - 1][y] === 'L') {
+                if (RegionalMap[x - 1] && RegionalMap[x - 1][y] === 'L') {
                   //theres stone to the left, above, and below
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone on all sides
                     ctx.drawImage(cherrysheet, 0, 0, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
@@ -222,7 +222,7 @@
                   }
                 } else {
                   //theres stone above and below but not to the left
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone above and below and to the right, but not to the left
                     ctx.drawImage(cherrysheet, 0, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
@@ -232,9 +232,9 @@
                 }
               } else {
                 //theres stone below and not above
-                if (RegionalMap[x - 1][y] && RegionalMap[x - 1][y] === 'L') {
+                if (RegionalMap[x - 1] && RegionalMap[x - 1][y] === 'L') {
                   //theres stone below and to the left but not above
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone below, to the right, and to the left, but not above
                     ctx.drawImage(cherrysheet, 160, 0, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
@@ -243,7 +243,7 @@
                   }
                 } else {
                   //theres stone below but not to the left or above
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone below and to the right but not to the left or above
                     ctx.drawImage(cherrysheet, 0, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
@@ -256,9 +256,9 @@
               //theres no stone below
               if (RegionalMap[x][y - 1] && RegionalMap[x][y - 1] === 'L') {
                 //theres stone above but not below
-                if (RegionalMap[x - 1][y] && RegionalMap[x - 1][y] === 'L') {
+                if (RegionalMap[x - 1] && RegionalMap[x - 1][y] === 'L') {
                   //theres stone above and to the left but not below
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone above and to either side but not below
                     ctx.drawImage(cherrysheet, 160, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
@@ -267,7 +267,7 @@
                   }
                 } else {
                   //theres stone above but not to the left or below
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone above and to the right but not to the left or below
                     ctx.drawImage(cherrysheet, 80, 80, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
@@ -277,11 +277,11 @@
                 }
               } else {
                 //theres no stone above or below
-                if (RegionalMap[x - 1][y] && RegionalMap[x - 1][y] === 'L') {
+                if (RegionalMap[x - 1] && RegionalMap[x - 1][y] === 'L') {
                   //theres stone to the left and not above or below
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone to either side but not below or above
-                    if (RegionalMap[x][y+1] && RegionalMap[x][y+1] === 'H') {
+                    if (RegionalMap[x][y + 1] && RegionalMap[x][y + 1] === 'H') {
                       ctx.drawImage(cherrysheet, 80, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                     } else {
                       ctx.drawImage(cherrysheet, 0, 0, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
@@ -292,7 +292,7 @@
                   }
                 } else {
                   //theres no stone to the left, above, or below
-                  if (RegionalMap[x + 1][y] && RegionalMap[x + 1][y] === 'L') {
+                  if (RegionalMap[x + 1] && RegionalMap[x + 1][y] === 'L') {
                     //----theres stone to the right and nowhere else
                     ctx.drawImage(cherrysheet, 0, 160, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
                   } else {
