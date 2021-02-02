@@ -392,7 +392,7 @@
               if (playerslist[i].x > oldplayerslist[i].x) {
                 playerslist[i].walking = true;
                 playerslist[i].right = true;
-                console.log(JSON.parse(JSON.stringify(players)));
+                console.log(JSON.parse(JSON.stringify({'new':playerslist, 'old':oldplayerslist})));
               }
               if (playerslist[i].x < oldplayerslist[i].x) {
                 playerslist[i].walking = true;
