@@ -381,6 +381,7 @@
           // console.log(msg.name+' joined.');
         }
         if (msg.type === 'pingpos') {
+          console.log('pingpos');
           let oldplayers = JSON.parse(JSON.stringify(players));
           let oldplayerslist = Object.values(oldplayers);
           players = msg.players;
@@ -389,7 +390,8 @@
             if (oldplayerslist[i]) {
               if (playerslist[i].x > oldplayerslist[i].x) {
                 playerslist[i].walking = true;
-                playerslist[i].right = true
+                playerslist[i].right = true;
+                console.log(JSON.parse(JSON.stringify(players)));
               }
               if (playerslist[i].x < oldplayerslist[i].x) {
                 playerslist[i].walking = true;
@@ -405,7 +407,7 @@
               for (let i = 0; i < Object.values(players).length; i++) {
                 Object.values(players)[i].walking = false;
               }
-          }, 60)
+          }, 1000)
         }
       }
     }
