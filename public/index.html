@@ -73,7 +73,7 @@
       let RegionalMap = transposed[0].map((_, colIndex) => transposed.map(row => row[colIndex]));
       // noinspection SillyAssignmentJS
       $screen.width = $screen.width;
-      let grid = ctx.createLinearGradient(100,0,100,$screen.height/2);
+      let grid = ctx.createLinearGradient(100,0,100,$screen.height);
       grid.addColorStop(1, "#ffbb00");
       grid.addColorStop(0, "#ddffff");
       ctx.fillStyle = grid;
