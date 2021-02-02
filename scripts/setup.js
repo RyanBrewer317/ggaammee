@@ -335,7 +335,7 @@ var Hero = /** @class */ (function () {
             this.x = 1;
         // noinspection JSSuspiciousNameCombination
         exports.RegionalMap[this.x - Math.floor(this.x) < 0.75 ? Math.floor(this.x) : Math.ceil(this.x)][this.y - Math.floor(this.y) < 0.75 ? Math.floor(this.y) : Math.ceil(this.y)].select(this);
-        this.pingPos();
+        // this.pingPos();
     };
     Hero.prototype.pingClosed = function (hero) {
         this.socket.send('{"type": "pingclosed", "name": "' + hero.name + '"}');

@@ -311,7 +311,7 @@ export class Hero {
     if (this.x < 1) this.x = 1;
     // noinspection JSSuspiciousNameCombination
     RegionalMap[this.x-Math.floor(this.x)<0.75? Math.floor(this.x) : Math.ceil(this.x)][this.y-Math.floor(this.y)<0.75? Math.floor(this.y) : Math.ceil(this.y)].select(this);
-    this.pingPos();
+    // this.pingPos();
   }
 
   pingClosed(hero: Hero) {
