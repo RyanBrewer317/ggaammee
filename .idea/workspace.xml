@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10defaac-3505-4856-8193-0c2899c7487d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/rocksheet.tif" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/rocksheet.tif" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/script.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-496">
-              <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+            <state relative-caret-position="73">
+              <caret line="16" column="52" lean-forward="true" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -58,17 +59,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="276" column="60" lean-forward="true" selection-start-line="276" selection-start-column="60" selection-end-line="276" selection-end-column="60" />
+            <state relative-caret-position="-213">
+              <caret line="314" column="3" lean-forward="true" selection-start-line="314" selection-start-column="3" selection-end-line="314" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="403" column="46" selection-start-line="403" selection-start-column="46" selection-end-line="403" selection-end-column="46" />
+            <state relative-caret-position="305">
+              <caret line="403" column="111" lean-forward="true" selection-start-line="403" selection-start-column="111" selection-end-line="403" selection-end-column="111" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -118,8 +119,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/scripts/script.js" />
         <option value="$PROJECT_DIR$/scripts/script.ts" />
-        <option value="$PROJECT_DIR$/scripts/setup.ts" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/scripts/setup.ts" />
       </list>
     </option>
   </component>
@@ -222,12 +223,12 @@
       <workItem from="1610732853932" duration="34000" />
       <workItem from="1610745224856" duration="27619000" />
       <workItem from="1611691925210" duration="4425000" />
-      <workItem from="1611912197761" duration="23371000" />
+      <workItem from="1611912197761" duration="24913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100479000" />
+    <option name="totallyTimeSpent" value="102021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,6 +241,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="830" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.24309392" side_tool="true" visible="true" weight="0.17238913" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7569061" visible="true" weight="0.17238913" />
@@ -251,7 +253,7 @@
       <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49928468" weight="0.32867134" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="TypeScript" order="6" weight="0.32867134" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32961586" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32867134" />
       <window_info anchor="bottom" id="Run" order="8" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
@@ -346,16 +348,6 @@
     <entry file="file://$PROJECT_DIR$/public/img/smallrocksheet.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/script.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-496">
-          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/bigrocksheet.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -372,25 +364,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="276" column="60" lean-forward="true" selection-start-line="276" selection-start-column="60" selection-end-line="276" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/bigrocktinsheet.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-213">
+          <caret line="314" column="3" lean-forward="true" selection-start-line="314" selection-start-column="3" selection-end-line="314" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="403" column="46" selection-start-line="403" selection-start-column="46" selection-end-line="403" selection-end-column="46" />
+        <state relative-caret-position="305">
+          <caret line="403" column="111" lean-forward="true" selection-start-line="403" selection-start-column="111" selection-end-line="403" selection-end-column="111" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/script.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="16" column="52" lean-forward="true" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
