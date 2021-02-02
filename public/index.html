@@ -323,9 +323,7 @@
         ctx.strokeRect((selected_block[0]-1) * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
       }
       for (let i = 0; i < Object.values(players).length; i++) {
-        ctx.fillStyle = '#dbffff';
-        ctx.fillRect(hero.x*WUNIT, hero.y*HUNIT, WUNIT, HUNIT);
-        ctx.drawImage(herosheet, (hero.walking? (+Date.now()%2===0? 0 : 80): 160), (hero.right? 240 : 160), 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+        ctx.drawImage(herosheet, (Object.values(players)[i].walking? (+Date.now()%2===0? 0 : 80): 160), (Object.values(players)[i].right? 240 : 160), 80, 80, Object.values(players)[i].x*WUNIT, Object.values(players)[i].y*HUNIT, WUNIT, HUNIT);
       }
     };
     function drawhotbar(newhotbar) {
@@ -409,7 +407,7 @@
         }
       }
     }
-    cherrysheet.onload = start;
+    herosheet.onload = start;
 </script>
 </body>
 </html>
