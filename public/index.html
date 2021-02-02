@@ -78,7 +78,7 @@
       grid.addColorStop(0, "#ddffff");
       ctx.fillStyle = grid;
       ctx.fillRect(0, 0, $screen.width, $screen.height);
-      ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/13)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/10)));
+      ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/13)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/8)));
       for (let y = 0; y < REGION_HEIGHT; y++) {
         for (let x = 0; x < REGION_WIDTH; x++) {
           let block = RegionalMap[x][y];
