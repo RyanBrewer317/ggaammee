@@ -323,6 +323,7 @@
         ctx.strokeRect((selected_block[0]-1) * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
       }
       for (let i = 0; i < Object.values(players).length; i++) {
+        console.log(Object.values(players)[i].walking, Object.values(players)[i].right);
         ctx.drawImage(herosheet, (Object.values(players)[i].walking? (+Date.now()%2===0? 0 : 80): 160), (Object.values(players)[i].right? 240 : 160), 80, 80, (Object.values(players)[i].x-1) * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT, HUNIT);
       }
     };
@@ -402,12 +403,12 @@
               }
             } else playerslist[i].walking = false;
           }
-          clearTimeout(updatetimeout);
-          updatetimeout = setTimeout(()=>{
-              for (let i = 0; i < Object.values(players).length; i++) {
-                Object.values(players)[i].walking = false;
-              }
-          }, 1000)
+          // clearTimeout(updatetimeout);
+          // updatetimeout = setTimeout(()=>{
+          //     for (let i = 0; i < Object.values(players).length; i++) {
+          //       Object.values(players)[i].walking = false;
+          //     }
+          // }, 1000)
         }
       }
     }
