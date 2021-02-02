@@ -35,6 +35,7 @@
     let joinedmessage = true;
     let name = '';
     let players = {};
+    let updatetimeout;
 
     let smallrocksheet = new Image();
     smallrocksheet.src = 'img/smallrocksheet.png';
@@ -50,6 +51,8 @@
     bigrocktinsheet.src = 'img/bigrocktinsheet.png';
     let cherrysheet = new Image();
     cherrysheet.src = 'img/cherrysheet.png';
+    let herosheet = new Image();
+    herosheet.src = 'img/herosheet.png';
 
     let drawfullmap = (map, selected) => {
       // console.log('drawing map');
@@ -312,20 +315,6 @@
             ctx.fillStyle = '#208e24';
             ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT/3);
           }
-          if (block === 'H' && RegionalMap[x+1] && RegionalMap[x+1][y] === ' ') {
-            ctx.fillStyle = '#dbffff';
-            ctx.fillRect((x+0.75)*WUNIT, y*HUNIT, WUNIT/4, HUNIT);
-          }
-          if (block === 'H' && RegionalMap[x-1] && RegionalMap[x-1][y] === ' ') {
-            ctx.fillStyle = '#dbffff';
-            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT/4, HUNIT);
-          }
-          // if (block === 'T') ctx.fillStyle = '#dcdfd6';
-          // if (block === 'C') ctx.fillStyle = '#dfba85';
-          // if (block === 'T' || block === 'C') {
-          //   ctx.fillRect((x+0.6)*WUNIT, (y+0.2)*HUNIT, WUNIT/6, HUNIT/6);
-          //   ctx.fillRect((x+0.3)*WUNIT, (y+0.7)*HUNIT, WUNIT/8, HUNIT/8);
-          // }
         }
       }
       if (RegionalMap[selected_block[0]-1] && RegionalMap[selected_block[0]-1][(REGION_HEIGHT - selected_block[1] - 1)] !== ' ') {
@@ -334,8 +323,9 @@
         ctx.strokeRect((selected_block[0]-1) * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
       }
       for (let i = 0; i < Object.values(players).length; i++) {
-        ctx.fillStyle = 'red';
-        ctx.fillRect((Object.values(players)[i].x-1) * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT / 2, HUNIT);
+        ctx.fillStyle = '#dbffff';
+        ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+        ctx.drawImage(herosheet, (hero.walking? (+Date.now()%2===0? 0 : 80): 160), (hero.right? 240 : 160), 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
       }
     };
     function drawhotbar(newhotbar) {
@@ -393,7 +383,29 @@
           // console.log(msg.name+' joined.');
         }
         if (msg.type === 'pingpos') {
+          let oldplayers = JSON.parse(JSON.stringify(players));
           players = msg.players;
+          for (let i = 0; i < players.length; i++) {
+            if (oldplayers[i]) {
+              if (players[i].x > oldplayers[i].x) {
+                players[i].walking = true;
+                players[i].right = true
+              }
+              if (players[i].x < oldplayers[i].x) {
+                players[i].walking = true;
+                players[i].right = false;
+              }
+              if (players[i].x === oldplayers[i].x) {
+                players[i].walking = false;
+              }
+            } else players[i].walking = false;
+          }
+          clearTimeout(updatetimeout);
+          updatetimeout = setTimeout(()=>{
+              for (let i = 0; i < players.length; i++) {
+                players[i].walking = false;
+              }
+          }, 3)
         }
       }
     }
