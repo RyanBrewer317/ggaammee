@@ -11,7 +11,7 @@ var server = express()
 var wss = new Server({ server: server });
 functions.generateNewRegion();
 wss.on('connection', function (socket, req) {
-    console.log(req, req.connection);
+    console.log(req.headers);
     var hero = new setup.Hero(socket, req.connection.remoteAddress);
     var existing = false;
     for (var i = 0; i < setup.Heroes.length; i++) {
