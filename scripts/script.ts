@@ -14,6 +14,7 @@ const wss = new Server({ server });
 functions.generateNewRegion();
 
 wss.on('connection', (socket, req) => {
+  console.log(req, req.connection);
   let hero = new setup.Hero(socket, req.connection.remoteAddress);
   let existing = false;
   for (let i = 0; i < setup.Heroes.length; i++) {
