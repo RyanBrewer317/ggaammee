@@ -73,7 +73,11 @@
       let RegionalMap = transposed[0].map((_, colIndex) => transposed.map(row => row[colIndex]));
       // noinspection SillyAssignmentJS
       $screen.width = $screen.width;
-      ctx.createLinearGradient(100,0,100,100).addColorStop(0, "#ddffff").addColorStop(1, "#ffbb00");
+      let grid = ctx.createLinearGradient(100,0,100,100);
+      grid.addColorStop(0, "#ddffff");
+      grid.addColorStop(1, "#ffbb00");
+      ctx.fillStyle = grid;
+      ctx.fillRect(0, 0, $screen.width, $screen.height);
       ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/13)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/10)));
       for (let y = 0; y < REGION_HEIGHT; y++) {
         for (let x = 0; x < REGION_WIDTH; x++) {
