@@ -323,7 +323,7 @@
         ctx.strokeRect((selected_block[0]-1) * WUNIT, (REGION_HEIGHT - selected_block[1] - 1) * HUNIT, WUNIT, HUNIT);
       }
       for (let i = 0; i < Object.values(players).length; i++) {
-        console.log(Object.values(players)[i].walking, Object.values(players)[i].right);
+        // console.log(Object.values(players)[i].walking, Object.values(players)[i].right);
         ctx.drawImage(herosheet, (Object.values(players)[i].walking? (+Date.now()%2===0? 0 : 80): 160), (Object.values(players)[i].right? 240 : 160), 80, 80, (Object.values(players)[i].x-1) * WUNIT, (REGION_HEIGHT - Object.values(players)[i].y - 1) * HUNIT, WUNIT, HUNIT);
       }
     };
@@ -382,7 +382,7 @@
           // console.log(msg.name+' joined.');
         }
         if (msg.type === 'pingpos') {
-          console.log('pingpos');
+          // console.log('pingpos');
           let oldplayers = JSON.parse(JSON.stringify(players));
           let oldplayerslist = Object.values(oldplayers);
           players = msg.players;
@@ -392,7 +392,7 @@
               if (playerslist[i].x > oldplayerslist[i].x) {
                 playerslist[i].walking = true;
                 playerslist[i].right = true;
-                console.log(JSON.parse(JSON.stringify({'new':playerslist, 'old':oldplayerslist})));
+                // console.log(JSON.parse(JSON.stringify({'new':playerslist, 'old':oldplayerslist})));
               }
               if (playerslist[i].x < oldplayerslist[i].x) {
                 playerslist[i].walking = true;
@@ -401,7 +401,7 @@
               if (playerslist[i].x === oldplayerslist[i].x) {
                 playerslist[i].walking = false; playerslist[i].right = playerslist[i].right || false;
               }
-            } else {console.log(oldplayerslist); playerslist[i].walking = false; playerslist[i].right = false;}
+            } else {/*console.log(oldplayerslist);*/ playerslist[i].walking = false; playerslist[i].right = false;}
           }
           // clearTimeout(updatetimeout);
           // updatetimeout = setTimeout(()=>{

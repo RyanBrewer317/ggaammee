@@ -14,7 +14,7 @@ const wss = new Server({ server });
 functions.generateNewRegion();
 
 wss.on('connection', (socket, req) => {
-  console.log(req.headers['x-forwarded-for']);
+  // console.log(req.headers['x-forwarded-for']);
   let hero = new setup.Hero(socket, req.headers['x-forwarded-for']);
   let existing = false;
   for (let i = 0; i < setup.Heroes.length; i++) {
