@@ -73,13 +73,12 @@
       let RegionalMap = transposed[0].map((_, colIndex) => transposed.map(row => row[colIndex]));
       // noinspection SillyAssignmentJS
       $screen.width = $screen.width;
+      ctx.createLinearGradient(100,0,100,100).addColorStop(0, "#ddffff").addColorStop(1, "#ffbb00");
       ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/13)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/10)));
       for (let y = 0; y < REGION_HEIGHT; y++) {
         for (let x = 0; x < REGION_WIDTH; x++) {
           let block = RegionalMap[x][y];
           if (block === 'D') {
-            ctx.fillStyle = '#dbffff';
-            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
             if (RegionalMap[x][y + 1] && RegionalMap[x][y + 1] === 'D') {
               // theres stone below
               if (RegionalMap[x][y - 1] && RegionalMap[x][y - 1] === 'D') {
@@ -173,12 +172,7 @@
           } else if (block === 'B') {
             ctx.fillStyle = '#000';
             ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
-          } else if (block === ' ') {
-            ctx.fillStyle = '#dbffff';
-            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
           } else if (['S', 'T', 'C'].includes(block)) {
-            ctx.fillStyle = '#dbffff';
-            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
             if (RegionalMap[x][y + 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y + 1])) {
               // theres stone below
               if (RegionalMap[x][y - 1] && ['S', 'T', 'C'].includes(RegionalMap[x][y - 1])) {
@@ -300,8 +294,6 @@
               }
             }
           } else if (block === 'L') {
-            ctx.fillStyle = '#dbffff';
-            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
             if (RegionalMap[x][y + 1] && RegionalMap[x][y + 1] === 'L') {
               // theres stone below
               if (RegionalMap[x][y - 1] && RegionalMap[x][y - 1] === 'L') {
@@ -398,8 +390,6 @@
               }
             }
           } else if (block === 'H') {
-            ctx.fillStyle = '#dbffff';
-            ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
             ctx.drawImage(cherrysheet, 80, 240, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
           }
         }
