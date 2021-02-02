@@ -324,7 +324,7 @@
       }
       for (let i = 0; i < Object.values(players).length; i++) {
         ctx.fillStyle = '#dbffff';
-        ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT);
+        ctx.fillRect(hero.x*WUNIT, hero.y*HUNIT, WUNIT, HUNIT);
         ctx.drawImage(herosheet, (hero.walking? (+Date.now()%2===0? 0 : 80): 160), (hero.right? 240 : 160), 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
       }
     };
