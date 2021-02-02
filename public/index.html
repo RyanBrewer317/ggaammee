@@ -71,7 +71,7 @@
       let RegionalMap = transposed[0].map((_, colIndex) => transposed.map(row => row[colIndex]));
       // noinspection SillyAssignmentJS
       $screen.width = $screen.width;
-      ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/12)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/10)));
+      ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/13)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/10)));
       for (let y = 0; y < REGION_HEIGHT; y++) {
         for (let x = 0; x < REGION_WIDTH; x++) {
           let block = RegionalMap[x][y];
@@ -382,26 +382,28 @@
         }
         if (msg.type === 'pingpos') {
           let oldplayers = JSON.parse(JSON.stringify(players));
+          let oldplayerslist = Object.values(oldplayers);
           players = msg.players;
-          for (let i = 0; i < players.length; i++) {
-            if (oldplayers[i]) {
-              if (players[i].x > oldplayers[i].x) {
-                players[i].walking = true;
-                players[i].right = true
+          let playerslist = Object.values(players);
+          for (let i = 0; i < playerslist.length; i++) {
+            if (oldplayerslist[i]) {
+              if (playerslist[i].x > oldplayerslist[i].x) {
+                playerslist[i].walking = true;
+                playerslist[i].right = true
               }
-              if (players[i].x < oldplayers[i].x) {
-                players[i].walking = true;
-                players[i].right = false;
+              if (playerslist[i].x < oldplayerslist[i].x) {
+                playerslist[i].walking = true;
+                playerslist[i].right = false;
               }
-              if (players[i].x === oldplayers[i].x) {
-                players[i].walking = false;
+              if (playerslist[i].x === oldplayerslist[i].x) {
+                playerslist[i].walking = false;
               }
-            } else players[i].walking = false;
+            } else playerslist[i].walking = false;
           }
           clearTimeout(updatetimeout);
           updatetimeout = setTimeout(()=>{
-              for (let i = 0; i < players.length; i++) {
-                players[i].walking = false;
+              for (let i = 0; i < Object.values(players).length; i++) {
+                Object.values(players)[i].walking = false;
               }
           }, 60)
         }
