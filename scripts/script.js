@@ -11,8 +11,8 @@ var server = express()
 var wss = new Server({ server: server });
 functions.generateNewRegion();
 wss.on('connection', function (socket, req) {
-    console.log(req.headers);
-    var hero = new setup.Hero(socket, req.connection.remoteAddress);
+    console.log(req.headers['x-forwarded-for']);
+    var hero = new setup.Hero(socket, req.headers['x-forwarded-for']);
     var existing = false;
     for (var i = 0; i < setup.Heroes.length; i++) {
         if (setup.Heroes[i].name === hero.name) {
