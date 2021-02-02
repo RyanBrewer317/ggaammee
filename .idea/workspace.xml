@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="79" column="32" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="32" />
+            <state relative-caret-position="252">
+              <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -229,12 +229,12 @@
       <workItem from="1610732853932" duration="34000" />
       <workItem from="1610745224856" duration="27619000" />
       <workItem from="1611691925210" duration="4425000" />
-      <workItem from="1611912197761" duration="33340000" />
+      <workItem from="1611912197761" duration="33593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110448000" />
+    <option name="totallyTimeSpent" value="110701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,8 +395,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="79" column="32" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="32" />
+        <state relative-caret-position="252">
+          <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
