@@ -80,7 +80,11 @@ let drawfullmap = (map, selected) => {
         sheet = cherrysheet;
         imgx, imgy = gettexture(RegionalMap, x, y, (0,0), (160,160), (0,160), (0,0), (160,0), (240,0), (0,80), (240,240), (160,80), (240,80), (80,80), (160,80), (80, 160), (160,160), (0,160), (240,240), ['L']);
       } else if (block === 'H') {
-        sheet = cherrysheet; imgx = 80; imgy = 240;
+        sheet = cherrysheet;
+        imgx = 80; imgy = 240;
+      } else {
+        sheet = new Image();
+        imgx = 0; imgy = 0;
       }
       ctx.drawImage(sheet, imgx, imgy, 80, 80, x*WUNIT, y*HUNIT, WUNIT, HUNIT);
     }
