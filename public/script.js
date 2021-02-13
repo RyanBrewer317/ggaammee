@@ -62,15 +62,15 @@ let drawfullmap = (map, selected) => {
   ctx.fillStyle = grid;
   ctx.fillRect(0, 0, $screen.width, $screen.height);
   ctx.translate(Math.floor(-(hero.x-1)*WUNIT+(REGION_WIDTH*WUNIT/13)), Math.floor(-(REGION_HEIGHT-hero.y-1)*HUNIT+(REGION_HEIGHT*HUNIT/8)));
-  let sheet;
-  let imgx;
-  let imgy;
   for (let y = 0; y < REGION_HEIGHT; y++) {
     for (let x = 0; x < REGION_WIDTH; x++) {
+      let sheet;
+      let imgx;
+      let imgy;
       let block = RegionalMap[x][y];
       if (block === 'D') {
         sheet = dirtsheet;
-        imgx, imgy = gettexture(RegionalMap, x, y, (80, 160), (160, 160), (0, 160), (240, 0), (80, 80), (160, 80), (0, 80), (80, 160), (80, 240), (160, 240), (0, 240), (1000, 1000), (240, 160), (160, 240), (0, 240), (240, 80), ['D']);
+        imgx, imgy = gettexture(RegionalMap, x, y, (80,160), (160,160), (0,160), (240,0), (80,80), (160,80), (0,80), (80,160), (80,240), (160,240), (0,240), (1000,1000), (240,160), (160,240), (0,240), (240,80), ['D']);
       } else if (block === 'B') {
         sheet = bedrocksheet;
         imgx, imgy = gettexture(RegionalMap, x, y, (80, 160), (160, 160), (0, 160), (240, 0), (80, 80), (160, 80), (0, 80), (80, 160), (80, 240), (160, 240), (0, 240), (1000, 1000), (240, 160), (160, 240), (0, 240), (240, 80), ['B']);
@@ -190,8 +190,11 @@ herosheet.onload = start;
 function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, a, lr, l, r, no, options) {
   let selection;
   if (map[x][y + 1] && options.includes(map[x][y + 1])) {
+    // the block below is the same
     if (map[x][y - 1] && options.includes(map[x][y - 1])) {
+      // the block above is the same
       if (map[x - 1] && options.includes(map[x - 1][y])) {
+        // the block to the left is the same
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks on all sides
           selection = labr;
@@ -200,6 +203,7 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
           selection = lab;
         }
       } else {
+        // the block to the left is different
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks above and below and to the right, but not to the left
           selection = abr;
@@ -209,7 +213,9 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
         }
       }
     } else {
+      // the block above is different
       if (map[x - 1] && options.includes(map[x - 1][y])) {
+        // the block to the left is the same
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks below, to the right, and to the left, but not above
           selection = lbr;
@@ -218,6 +224,7 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
           selection = lb;
         }
       } else {
+        // the block to the left is different
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks below and to the right but not to the left or above
           selection = br;
@@ -229,7 +236,9 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
     }
   } else {
     if (map[x][y - 1] && options.includes(map[x][y - 1])) {
+      // the block above is the same
       if (map[x - 1] && options.includes(map[x - 1][y])) {
+        // the block to the left is the same
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks above and to either side but not below
           selection = lar;
@@ -238,6 +247,7 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
           selection = la;
         }
       } else {
+        // the block to the left is different
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres stone above and to the right but not to the left or below
           selection = ar;
@@ -247,7 +257,9 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
         }
       }
     } else {
+      // the block above is different
       if (map[x - 1] && options.includes(map[x - 1][y])) {
+        // the block to the left is the same
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           //----theres similar blocks to either side but not below or above
           selection = lr;
@@ -256,6 +268,7 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
           selection = l;
         }
       } else {
+        // the block to the left is different
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           //----theres a similar block to the right and nowhere else
           selection = r;
