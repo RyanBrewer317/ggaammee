@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10defaac-3505-4856-8193-0c2899c7487d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/cherrysheet OLD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/cherrysheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/cherrysheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/script.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -60,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="312" column="79" lean-forward="true" selection-start-line="312" selection-start-column="79" selection-end-line="312" selection-end-column="79" />
+            <state relative-caret-position="4680">
+              <caret line="312" column="79" selection-start-line="312" selection-start-column="79" selection-end-line="312" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -74,14 +74,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+            <state relative-caret-position="270">
+              <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
               <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1239">
+              <caret line="78" column="98" lean-forward="true" selection-start-line="78" selection-start-column="98" selection-end-line="78" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -105,8 +115,8 @@
       <find>console</find>
       <find>right</find>
       <find>.walking</find>
-      <find>conso</find>
       <find>regionalmap</find>
+      <find>conso</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,6 +138,7 @@
         <option value="$PROJECT_DIR$/scripts/script.js" />
         <option value="$PROJECT_DIR$/scripts/script.ts" />
         <option value="$PROJECT_DIR$/scripts/setup.ts" />
+        <option value="$PROJECT_DIR$/public/script.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
@@ -231,12 +242,13 @@
       <workItem from="1610732853932" duration="34000" />
       <workItem from="1610745224856" duration="27619000" />
       <workItem from="1611691925210" duration="4425000" />
-      <workItem from="1611912197761" duration="34597000" />
+      <workItem from="1611912197761" duration="39800000" />
+      <workItem from="1613249362646" duration="3691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111705000" />
+    <option name="totallyTimeSpent" value="120599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -249,10 +261,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="830" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Favorites" order="0" sideWeight="0.24493554" side_tool="true" visible="true" weight="0.17238913" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7550644" visible="true" weight="0.17238913" />
+      <window_info id="Favorites" order="0" sideWeight="0.24493554" side_tool="true" weight="0.17238913" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7550644" visible="true" weight="0.17453505" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49928468" visible="true" weight="0.24055944" />
@@ -298,6 +309,20 @@
                 </list>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -359,10 +384,19 @@
     <entry file="file://$PROJECT_DIR$/public/img/rocksheet.tif">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/bigrocksheet.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/bigrocktinsheet.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/dirtsheet.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/script.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
@@ -376,30 +410,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/bigrocksheet.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/bigrocktinsheet.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/setup.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="312" column="79" lean-forward="true" selection-start-line="312" selection-start-column="79" selection-end-line="312" selection-end-column="79" />
+        <state relative-caret-position="4680">
+          <caret line="312" column="79" selection-start-line="312" selection-start-column="79" selection-end-line="312" selection-end-column="79" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/dirtsheet.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/img/cherrysheet.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1239">
+          <caret line="78" column="98" lean-forward="true" selection-start-line="78" selection-start-column="98" selection-end-line="78" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="75" column="69" lean-forward="true" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+        <state relative-caret-position="270">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
