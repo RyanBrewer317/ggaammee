@@ -36,6 +36,8 @@ let herosheet = new Image();
 herosheet.src = 'img/herosheet.png';
 let dirtsheet = new Image();
 dirtsheet.src = 'img/dirtsheet.png';
+let bedrocksheet = new Image();
+bedrocksheet.src = 'img/bedrocksheet.png';
 
 let drawfullmap = (map, selected) => {
   // console.log('drawing map');
@@ -70,8 +72,8 @@ let drawfullmap = (map, selected) => {
         sheet = dirtsheet;
         imgx, imgy = gettexture(RegionalMap, x, y, (80, 160), (160, 160), (0, 160), (240, 0), (80, 80), (160, 80), (0, 80), (80, 160), (80, 240), (160, 240), (0, 240), (1000, 1000), (240, 160), (160, 240), (0, 240), (240, 80), ['D']);
       } else if (block === 'B') {
-        ctx.fillStyle = '#000';
-        ctx.fillRect(x*WUNIT, y*HUNIT, WUNIT, HUNIT); //todo bedrock texture
+        sheet = bedrocksheet;
+        imgx, imgy = gettexture(RegionalMap, x, y, (80, 160), (160, 160), (0, 160), (240, 0), (80, 80), (160, 80), (0, 80), (80, 160), (80, 240), (160, 240), (0, 240), (1000, 1000), (240, 160), (160, 240), (0, 240), (240, 80), ['B']);
       } else if (['S', 'T', 'C'].includes(block)) {
         imgx, imgy, sheet = gettexture(RegionalMap, x, y, (80, 160, bigrocksheet), (160, 160, bigrocksheet), (0, 160, bigrocksheet), (240, 160, bigrocksheet), (80, 80, bigrocksheet), (160, 80, bigrocksheet), (0, 80, bigrocksheet), (80, 160, smallrocksheet), (80, 240, bigrocksheet), (160, 240, bigrocksheet), (0, 240, bigrocksheet), (240, 160, bigrocksheet), (160, 240, smallrocksheet), (0, 240, smallrocksheet), (240, 80, smallrocksheet), (240, 80, bigrocksheet), ['S', 'T', 'C']);
       } else if (block === 'L') {
