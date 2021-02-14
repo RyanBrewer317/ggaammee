@@ -70,10 +70,42 @@ let drawfullmap = (map, selected) => {
       let block = RegionalMap[x][y];
       if (block === 'D') {
         sheet = dirtsheet;
-        imgx, imgy = gettexture(RegionalMap, x, y, (80,160), (160,160), (0,160), (240,0), (80,80), (160,80), (0,80), (80,160), (80,240), (160,240), (0,240), (1000,1000), (240,160), (160,240), (0,240), (240,80), ['D']);
+        let labr = (80,160);
+        let lab = (160,160);
+        let abr = (0,160);
+        let ab = (240,0);
+        let lbr = (80,80);
+        let lb = (160,80);
+        let br = (0,80);
+        let b = (80,160);
+        let lar = (80,240);
+        let la = (160,240);
+        let ar = (0,240);
+        let a = (1000,1000);
+        let lr = (240,160);
+        let l = (160,240);
+        let r = (0,240);
+        let no = (240,80);
+        imgx, imgy = gettexture(RegionalMap, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, a, lr, l, r, no, ['D']);
       } else if (block === 'B') {
         sheet = bedrocksheet;
-        imgx, imgy = gettexture(RegionalMap, x, y, (80, 160), (160, 160), (0, 160), (240, 0), (80, 80), (160, 80), (0, 80), (80, 160), (80, 240), (160, 240), (0, 240), (1000, 1000), (240, 160), (160, 240), (0, 240), (240, 80), ['B']);
+        let labr = (80, 160);
+        let lab = (160,160);
+        let abr = (0,160);
+        let ab = (240,0);
+        let lbr = (80,80);
+        let lb = (160,80);
+        let br = (0,80);
+        let b = (80,160);
+        let lar = (80,240);
+        let la = (160,240);
+        let ar = (0,240);
+        let a = (1000,1000);
+        let lr = (240,160);
+        let l = (160,240);
+        let r = (0,240);
+        let no = (240,80);
+        imgx, imgy = gettexture(RegionalMap, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, a, lr, l, r, no, ['B']);
       } else if (['S', 'T', 'C'].includes(block)) {
         imgx, imgy, sheet = gettexture(RegionalMap, x, y, (80, 160, bigrocksheet), (160, 160, bigrocksheet), (0, 160, bigrocksheet), (240, 160, bigrocksheet), (80, 80, bigrocksheet), (160, 80, bigrocksheet), (0, 80, bigrocksheet), (80, 160, smallrocksheet), (80, 240, bigrocksheet), (160, 240, bigrocksheet), (0, 240, bigrocksheet), (240, 160, bigrocksheet), (160, 240, smallrocksheet), (0, 240, smallrocksheet), (240, 80, smallrocksheet), (240, 80, bigrocksheet), ['S', 'T', 'C']);
       } else if (block === 'L') {
