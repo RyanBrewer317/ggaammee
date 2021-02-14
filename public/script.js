@@ -221,6 +221,7 @@ herosheet.onload = start;
 
 function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, a, lr, l, r, no, options) {
   let selection;
+  console.log('---------');
   if (map[x][y + 1] && options.includes(map[x][y + 1])) {
     // the block below is the same
     console.log(options[0], 'b');
