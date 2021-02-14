@@ -223,120 +223,120 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
   let selection;
   if (map[x][y + 1] && options.includes(map[x][y + 1])) {
     // the block below is the same
-    console.log('b');
+    console.log(options[0], 'b');
     if (map[x][y - 1] && options.includes(map[x][y - 1])) {
-      console.log('a');
+      console.log(options[0], 'a');
       // the block above is the same
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        console.log('l');
+        console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks on all sides
-          console.log('r');
+          console.log(options[0], 'r');
           selection = labr;
         } else {
           // theres similar blocks to the left, above, and below, but not to the right
-          console.log('no r');
+          console.log(options[0], 'no r');
           selection = lab;
         }
       } else {
         // the block to the left is different
-        console.log('no l');
+        console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks above and below and to the right, but not to the left
-          console.log('r');
+          console.log(options[0], 'r');
           selection = abr;
         } else {
           // theres similar blocks above and below but not to either side
-          console.log('no r');
+          console.log(options[0], 'no r');
           selection = ab;
         }
       }
     } else {
       // the block above is different
-      console.log('no a');
+      console.log(options[0], 'no a');
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        console.log('l');
+        console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks below, to the right, and to the left, but not above
-          console.log('r');
+          console.log(options[0], 'r');
           selection = lbr;
         } else {
           // theres similar blocks below and to the left but not to the right or above
-          console.log('no r');
+          console.log(options[0], 'no r');
           selection = lb;
         }
       } else {
         // the block to the left is different
-        console.log('no l');
+        console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks below and to the right but not to the left or above
-          console.log('r');
+          console.log(options[0], 'r');
           selection = br;
         } else {
           // theres a similar block below but not anywhere else
-          console.log('no r');
+          console.log(options[0], 'no r');
           selection = b;
         }
       }
     }
   } else {
     // the block below is different
-    console.log('no b');
+    console.log(options[0], 'no b');
     if (map[x][y - 1] && options.includes(map[x][y - 1])) {
       // the block above is the same
-      console.log('a');
+      console.log(options[0], 'a');
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        console.log('l');
+        console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks above and to either side but not below
-          console.log('r');
+          console.log(options[0], 'r');
           selection = lar;
         } else {
           // theres similar blocks above and to the left but not the right or below
-          console.log('no r');
+          console.log(options[0], 'no r');
           selection = la;
         }
       } else {
         // the block to the left is different
-        console.log('no l');
+        console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres stone above and to the right but not to the left or below
-          console.log('r');
+          console.log(options[0], 'r');
           selection = ar;
         } else {
           // theres similar blocks above but not anywhere else
-          console.log('no r');
+          console.log(options[0], 'no r');
           // todo but the situation is currently impossible
         }
       }
     } else {
       // the block above is different
-      console.log('no a');
+      console.log(options[0], 'no a');
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        console.log('l');
+        console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           //----theres similar blocks to either side but not below or above
-          console.log('r');
+          console.log(options[0], 'r');
           selection = lr;
         } else {
           //----theres a similar block to the left but not anywhere else
-          console.log('no r');
+          console.log(options[0], 'no r');
           selection = l;
         }
       } else {
         // the block to the left is different
-        console.log('no l');
+        console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           //----theres a similar block to the right and nowhere else
-          console.log('r');
+          console.log(options[0], 'r');
           selection = r;
         } else {
           //----theres no similar blocks around
-          console.log('no r');
+          console.log(options[0], 'no r');
           selection = no;
         }
       }
