@@ -67,18 +67,23 @@ let drawfullmap = (map, selected) => {
       let sheet;
       let imgx;
       let imgy;
+      let data;
       let block = RegionalMap[x][y];
       if (block === 'D') {
         sheet = dirtsheet;
-        imgx, imgy = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,80], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['D']);
+        data = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,80], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['D']);
+        imgx = data[0]; imgy = data[1];
       } else if (block === 'B') {
         sheet = bedrocksheet;
-        imgx, imgy = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,80], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['B']);
+        data = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,80], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['B']);
+        imgx = data[0]; imgy = data[1];
       } else if (['S', 'T', 'C'].includes(block)) {
-        imgx, imgy, sheet = gettexture(RegionalMap, x, y, [80, 160, bigrocksheet], [160, 160, bigrocksheet], [0, 160, bigrocksheet], [240, 160, bigrocksheet], [80, 80, bigrocksheet], [160, 80, bigrocksheet], [0, 80, bigrocksheet], [80, 160, smallrocksheet], [80, 240, bigrocksheet], [160, 240, bigrocksheet], [0, 240, bigrocksheet], [240, 160, bigrocksheet], [160, 240, smallrocksheet], [0, 240, smallrocksheet], [240, 80, smallrocksheet], [240, 80, bigrocksheet], ['S', 'T', 'C']);
+        data = gettexture(RegionalMap, x, y, [80, 160, bigrocksheet], [160, 160, bigrocksheet], [0, 160, bigrocksheet], [240, 160, bigrocksheet], [80, 80, bigrocksheet], [160, 80, bigrocksheet], [0, 80, bigrocksheet], [80, 160, smallrocksheet], [80, 240, bigrocksheet], [160, 240, bigrocksheet], [0, 240, bigrocksheet], [240, 160, bigrocksheet], [160, 240, smallrocksheet], [0, 240, smallrocksheet], [240, 80, smallrocksheet], [240, 80, bigrocksheet], ['S', 'T', 'C']);
+        imgx = data[0]; imgy = data[1]; sheet = data[2];
       } else if (block === 'L') {
         sheet = cherrysheet;
-        imgx, imgy = gettexture(RegionalMap, x, y, [0,0], [160,160], [0,160], [0,0], [160,0], [240,0], [0,80], [240,240], [160,80], [240,80], [80,80], [160,80], [80, 160], [160,160], [0,160], [240,240], ['L']);
+        data = gettexture(RegionalMap, x, y, [0,0], [160,160], [0,160], [0,0], [160,0], [240,0], [0,80], [240,240], [160,80], [240,80], [80,80], [160,80], [80, 160], [160,160], [0,160], [240,240], ['L']);
+        imgx = data[0]; imgy = data[1];
       } else if (block === 'H') {
         sheet = cherrysheet;
         imgx = 80; imgy = 240;
