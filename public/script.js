@@ -70,47 +70,15 @@ let drawfullmap = (map, selected) => {
       let block = RegionalMap[x][y];
       if (block === 'D') {
         sheet = dirtsheet;
-        let labr = (80,160);
-        let lab = (160,160);
-        let abr = (0,160);
-        let ab = (240,0);
-        let lbr = (80,80);
-        let lb = (160,80);
-        let br = (0,80);
-        let b = (80,160);
-        let lar = (80,240);
-        let la = (160,240);
-        let ar = (0,240);
-        let a = (1000,1000);
-        let lr = (240,160);
-        let l = (160,240);
-        let r = (0,240);
-        let no = (240,80);
-        imgx, imgy = gettexture(RegionalMap, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, a, lr, l, r, no, ['D']);
+        imgx, imgy = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,80], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['D']);
       } else if (block === 'B') {
         sheet = bedrocksheet;
-        let labr = (80, 160);
-        let lab = (160,160);
-        let abr = (0,160);
-        let ab = (240,0);
-        let lbr = (80,80);
-        let lb = (160,80);
-        let br = (0,80);
-        let b = (80,160);
-        let lar = (80,240);
-        let la = (160,240);
-        let ar = (0,240);
-        let a = (1000,1000);
-        let lr = (240,160);
-        let l = (160,240);
-        let r = (0,240);
-        let no = (240,80);
-        imgx, imgy = gettexture(RegionalMap, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, a, lr, l, r, no, ['B']);
+        imgx, imgy = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,80], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['B']);
       } else if (['S', 'T', 'C'].includes(block)) {
-        imgx, imgy, sheet = gettexture(RegionalMap, x, y, (80, 160, bigrocksheet), (160, 160, bigrocksheet), (0, 160, bigrocksheet), (240, 160, bigrocksheet), (80, 80, bigrocksheet), (160, 80, bigrocksheet), (0, 80, bigrocksheet), (80, 160, smallrocksheet), (80, 240, bigrocksheet), (160, 240, bigrocksheet), (0, 240, bigrocksheet), (240, 160, bigrocksheet), (160, 240, smallrocksheet), (0, 240, smallrocksheet), (240, 80, smallrocksheet), (240, 80, bigrocksheet), ['S', 'T', 'C']);
+        imgx, imgy, sheet = gettexture(RegionalMap, x, y, [80, 160, bigrocksheet], [160, 160, bigrocksheet], [0, 160, bigrocksheet], [240, 160, bigrocksheet], [80, 80, bigrocksheet], [160, 80, bigrocksheet], [0, 80, bigrocksheet], [80, 160, smallrocksheet], [80, 240, bigrocksheet], [160, 240, bigrocksheet], [0, 240, bigrocksheet], [240, 160, bigrocksheet], [160, 240, smallrocksheet], [0, 240, smallrocksheet], [240, 80, smallrocksheet], [240, 80, bigrocksheet], ['S', 'T', 'C']);
       } else if (block === 'L') {
         sheet = cherrysheet;
-        imgx, imgy = gettexture(RegionalMap, x, y, (0,0), (160,160), (0,160), (0,0), (160,0), (240,0), (0,80), (240,240), (160,80), (240,80), (80,80), (160,80), (80, 160), (160,160), (0,160), (240,240), ['L']);
+        imgx, imgy = gettexture(RegionalMap, x, y, [0,0], [160,160], [0,160], [0,0], [160,0], [240,0], [0,80], [240,240], [160,80], [240,80], [80,80], [160,80], [80, 160], [160,160], [0,160], [240,240], ['L']);
       } else if (block === 'H') {
         sheet = cherrysheet;
         imgx = 80; imgy = 240;
@@ -224,120 +192,90 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
   if (options[0] === 'D') console.log('----'+x+','+y+'-----');
   if (map[x][y + 1] && options.includes(map[x][y + 1])) {
     // the block below is the same
-    if (options[0] === 'D') console.log(options[0], 'b');
     if (map[x][y - 1] && options.includes(map[x][y - 1])) {
-      if (options[0] === 'D') console.log(options[0], 'a');
       // the block above is the same
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        if (options[0] === 'D') console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks on all sides
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = labr;
         } else {
           // theres similar blocks to the left, above, and below, but not to the right
-          if (options[0] === 'D') console.log(options[0], 'no r');
           selection = lab;
         }
       } else {
         // the block to the left is different
-        if (options[0] === 'D') console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks above and below and to the right, but not to the left
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = abr;
         } else {
           // theres similar blocks above and below but not to either side
-          if (options[0] === 'D') console.log(options[0], 'no r');
           selection = ab;
         }
       }
     } else {
       // the block above is different
-      if (options[0] === 'D') console.log(options[0], 'no a');
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        if (options[0] === 'D') console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks below, to the right, and to the left, but not above
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = lbr;
         } else {
           // theres similar blocks below and to the left but not to the right or above
-          if (options[0] === 'D') console.log(options[0], 'no r');
           selection = lb;
         }
       } else {
         // the block to the left is different
-        if (options[0] === 'D') console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks below and to the right but not to the left or above
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = br;
         } else {
           // theres a similar block below but not anywhere else
-          if (options[0] === 'D') console.log(options[0], 'no r');
           selection = b;
         }
       }
     }
   } else {
     // the block below is different
-    if (options[0] === 'D') console.log(options[0], 'no b');
     if (map[x][y - 1] && options.includes(map[x][y - 1])) {
       // the block above is the same
-      if (options[0] === 'D') console.log(options[0], 'a');
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        if (options[0] === 'D') console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres similar blocks above and to either side but not below
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = lar;
         } else {
           // theres similar blocks above and to the left but not the right or below
-          if (options[0] === 'D') console.log(options[0], 'no r');
           selection = la;
         }
       } else {
         // the block to the left is different
-        if (options[0] === 'D') console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           // theres stone above and to the right but not to the left or below
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = ar;
         } else {
           // theres similar blocks above but not anywhere else
-          if (options[0] === 'D') console.log(options[0], 'no r');
           // todo but the situation is currently impossible
         }
       }
     } else {
       // the block above is different
-      if (options[0] === 'D') console.log(options[0], 'no a');
       if (map[x - 1] && options.includes(map[x - 1][y])) {
         // the block to the left is the same
-        if (options[0] === 'D') console.log(options[0], 'l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           //----theres similar blocks to either side but not below or above
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = lr;
         } else {
           //----theres a similar block to the left but not anywhere else
-          if (options[0] === 'D') console.log(options[0], 'no r');
           selection = l;
         }
       } else {
         // the block to the left is different
-        if (options[0] === 'D') console.log(options[0], 'no l');
         if (map[x + 1] && options.includes(map[x + 1][y])) {
           //----theres a similar block to the right and nowhere else
-          if (options[0] === 'D') console.log(options[0], 'r');
           selection = r;
         } else {
           //----theres no similar blocks around
-          if (options[0] === 'D') console.log(options[0], 'no r');
           selection = no;
         }
       }
