@@ -71,7 +71,7 @@ let drawfullmap = (map, selected) => {
       let block = RegionalMap[x][y];
       if (block === 'D') {
         sheet = dirtsheet;
-        data = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,80], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['D']);
+        data = gettexture(RegionalMap, x, y, [80, 160], [160,160], [0,160], [240,0], [80,82], [160,80], [0,80], [80,160], [80,240], [160,240], [0,240], [1000,1000], [240,160], [160,240], [0,240], [240,80], ['D']);
         imgx = data[0]; imgy = data[1];
       } else if (block === 'B') {
         sheet = bedrocksheet;
