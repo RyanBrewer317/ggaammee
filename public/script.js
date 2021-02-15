@@ -343,5 +343,6 @@ function gettexture(map, x, y, labr, lab, abr, ab, lbr, lb, br, b, lar, la, ar, 
       }
     }
   }
+  console.log(selection);
   return selection
 }
