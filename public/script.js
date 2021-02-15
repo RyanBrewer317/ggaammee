@@ -82,7 +82,7 @@ let drawfullmap = (map, selected) => {
         imgx = data[0]; imgy = data[1]; sheet = data[2];
       } else if (block === 'L') {
         sheet = cherrysheet;
-        data = gettexture(RegionalMap, x, y, [0,0], [160,160], [0,160], [0,0], [160,0], [240,0], [0,80], [240,240], [160,80], [240,80], [80,80], [160,80], [80, 160], [160,160], [0,160], [240,240], ['L']);
+        data = gettexture(RegionalMap, x, y, [0,0], [160,160], [0,160], [0,0], [160,0], [240,0], [0,80], [240,240], [160,80], [240,80], [80,80], [160,80], [80, 160], [160,162], [0,160], [240,240], ['L']);
         imgx = data[0]; imgy = data[1];
       } else if (block === 'H') {
         sheet = cherrysheet;
