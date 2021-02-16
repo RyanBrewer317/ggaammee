@@ -92,7 +92,7 @@ let drawfullmap = (map, selected) => {
         imgy = 241;
       } else if (block === 'R') {
         sheet = ryesheet;
-        data = gettexture(RegionalMap, x, y, [0,0], [80,80], [0,80], [240,0], [0,0], [80,80], [0,80], [240,0], [0,0], [80,80], [0,80], [240,0], [0,0], [80,80], [0,80], [240,0], ['R']);
+        data = gettexture(RegionalMap, x, y, [2,0], [80,82], [0,82], [240,0], [2,0], [80,82], [0,82], [240,0], [2,0], [80,82], [0,82], [240,0], [2,0], [80,82], [0,82], [240,0], ['R']);
         imgx = data[0]; imgy = data[1];
       } else {
         sheet = new Image();
