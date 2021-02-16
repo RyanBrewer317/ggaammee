@@ -86,7 +86,7 @@ let drawfullmap = (map, selected) => {
         imgx = data[0]; imgy = data[1];
       } else if (block === 'H') {
         sheet = cherrysheet;
-        imgx = 80; imgy = 240;
+        imgx = 80; imgy = 241;
       } else {
         sheet = new Image();
         imgx = 0; imgy = 0;
