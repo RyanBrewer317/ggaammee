@@ -38,6 +38,8 @@ let dirtsheet = new Image();
 dirtsheet.src = 'img/dirtsheet.png';
 let bedrocksheet = new Image();
 bedrocksheet.src = 'img/bedrocksheet.png';
+let ryesheet = new Image();
+ryesheet.src = 'img/ryesheet.png';
 
 let drawfullmap = (map, selected) => {
   // console.log('drawing map');
@@ -86,7 +88,12 @@ let drawfullmap = (map, selected) => {
         imgx = data[0]; imgy = data[1];
       } else if (block === 'H') {
         sheet = cherrysheet;
-        imgx = 80; imgy = 241;
+        imgx = 80;
+        imgy = 241;
+      } else if (block === 'R') {
+        sheet = ryesheet;
+        data = gettexture(RegionalMap, x, y, [0,0], [80,80], [0,80], [240,0], [0,0], [80,80], [0,80], [240,0], [0,0], [80,80], [0,80], [240,0], [0,0], [80,80], [0,80], [240,0], ['R']);
+        imgx = data[0]; imgy = data[1];
       } else {
         sheet = new Image();
         imgx = 0; imgy = 0;

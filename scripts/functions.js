@@ -27,6 +27,9 @@ function generateNewRegion() {
                 else if (y < 3) {
                     material = setup.Material.Dirt;
                 }
+                else if (y === 3) {
+                    material = (Math.random() > 0.5 ? setup.Material.Air : setup.Material.Rye);
+                }
                 else {
                     material = setup.Material.Air;
                 }
@@ -56,7 +59,7 @@ function logSelectedRegion() {
         var line = '';
         for (var x = 0; x < setup.REGION_WIDTH; x++) {
             var m = setup.RegionalMap[x][y].material;
-            line = line + (m === setup.Material.Dirt ? "D" : (m === setup.Material.Stone ? "S" : (m === setup.Material.Bedrock ? 'B' : (m === setup.Material.Air ? ' ' : (m === setup.Material.CopperOre ? 'C' : (m === setup.Material.TinOre ? 'T' : (m === setup.Material.CherryLeaves ? 'L' : (m === setup.Material.CherryLog ? 'H' : '_'))))))));
+            line = line + (m === setup.Material.Dirt ? "D" : (m === setup.Material.Stone ? "S" : (m === setup.Material.Bedrock ? 'B' : (m === setup.Material.Air ? ' ' : (m === setup.Material.CopperOre ? 'C' : (m === setup.Material.TinOre ? 'T' : (m === setup.Material.CherryLeaves ? 'L' : (m === setup.Material.CherryLog ? 'H' : (m === setup.Material.Rye ? 'R' : '_')))))))));
         }
         out = out + '<br>' + line.substring(1);
     }

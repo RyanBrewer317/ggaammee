@@ -182,6 +182,7 @@ export enum Material {
   RedwoodPines,
   IcePlant,
   Fern,
+  Rye
 }
 
 export enum Biome {

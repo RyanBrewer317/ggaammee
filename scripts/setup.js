@@ -190,6 +190,7 @@ var Material;
     Material[Material["RedwoodPines"] = 18] = "RedwoodPines";
     Material[Material["IcePlant"] = 19] = "IcePlant";
     Material[Material["Fern"] = 20] = "Fern";
+    Material[Material["Rye"] = 21] = "Rye";
 })(Material = exports.Material || (exports.Material = {}));
 var Biome;
 (function (Biome) {
@@ -334,7 +335,7 @@ var Hero = /** @class */ (function () {
         if (this.x < 1)
             this.x = 1;
         // noinspection JSSuspiciousNameCombination
-        exports.RegionalMap[this.x - Math.floor(this.x) < 0.75 ? Math.floor(this.x) : Math.ceil(this.x)][this.y - Math.floor(this.y) < 0.75 ? Math.floor(this.y) : Math.ceil(this.y)].select(this);
+        exports.RegionalMap[Math.floor(this.x + 0.25)][Math.floor(this.y + 0.25)].select(this);
         // this.pingPos();
     };
     Hero.prototype.pingClosed = function (hero) {
